@@ -1,0 +1,319 @@
+---
+title: "Baseline Characteristics Table"
+format: 
+  html:
+    embed-resources: true  
+editor: visual
+---
+
+A common task for us is putting together a baseline characteristics table, or "Table 1." This is usually painful to do by hand, particularly when you often have to do it multiple times whenever a small change is made to a cohort. The following describes one way of automating much of this, using R and the `table1()` function in the table1 package.
+
+## Packages
+
+### Tidyverse
+
+If you're not already familiar with it, I think you'll find [tidyverse](https://www.tidyverse.org/) extremely helpful - it is actually a bundle of packages centered around 'tidy' data, which is just a fancy description for data that take the form of 3 rules:
+
+1.  Each variable has its own column
+
+2.  Each observation has its own row.
+
+3.  Each value has its own cell.
+
+Outside of time-varying analyses, that's pretty much exactly the type of analytic dataset we are creating for most of our work.
+
+### Table1
+
+In addition to tidyverse, for the baseline characteristics table, the package [table1](https://cran.r-project.org/web/packages/table1/vignettes/table1-examples.html) gets us pretty close to a final output. If you want to read more, see it's vignette at the aforementioned link.
+
+### Haven
+
+[Haven](https://haven.tidyverse.org/) is a tidyverse package that reads SAS datasets directly. Particularly helpful for us since most of our initial data wrangling has to take place in SAS. If you haven't noticed already, base R is not particularly good at handling huge datasets (absent a lot of memory resources on a VM) because it completely stores them in memory.
+
+### Flextable
+
+[Flextable](https://ardata-fr.github.io/flextable-book/) will be used to get the final output into a word document. Will explain more on this later.
+
+```{r packages}
+#| output: false
+# if you need to install, you would use:
+# install.packages(c("tidyverse", "table1"))
+
+# load the relevant packages
+library(tidyverse)
+library(table1)
+library(haven)
+library(flextable)
+```
+
+## Load the data
+
+Here's where you load the SAS dataset, using the haven package. First, you assign the object `tab1` (can be any name you want it to be) something using the `<-` assignment operator, and you assign it the dataset returned by the `read_sas()` function from haven. There's lots more options with this function than I use below, but the basics usually work well.
+
+::: callout-note
+Note that R has case-sensitive variable/column names. Make your life a lot easier and rename variables to lowercase with the `rename_with()` function and `tolower` option, i.e., `rename_with(tolower)` (see below)
+:::
+
+```{r data}
+# note that the filepath needs forward slashes, or two backwards slashes,
+# e.g., "C:/Users/.../...sas7bdat" or "C:\\Users\\...\\...sas7bdat"
+#
+# tab1 <- read_sas("E:/.../.../...sas7bdat") %>% 
+#   rename_with(tolower)    
+```
+
+## Data wrangling for table1
+
+I already have my data loaded in an object called `aim1cohort`, so I'm just going to assign it the new name `tab1`, but you would not need to run this if you run above to load the data directly from a SAS dataset.
+
+```{r a1c}
+#| code-fold: true
+load(file = "/Users/stevensmith/Dropbox (UFL)/R Projects/K01-Initial_Antihtn_Prescribing/data/aim1cohort.rda")
+
+tab1 <- aim1cohort 
+```
+
+::: callout-tip
+## A note on 'pipe's
+
+One thing that's worth reading up on the `%>%` "pipe". See this [here](https://magrittr.tidyverse.org/reference/pipe.html) or [here](https://r4ds.had.co.nz/pipes.html). It's a tidyverse thing originally coming from the magrittr package. Because it's quite popular, Base R has now incorporated its own pipe now which does almost exactly the same thing, but looks like this: `|\`. You can use ctrl+shift+M as a short-cut, and in your R-studio preferences, you can tell R-Studio whether to use the native pipe `|>` or magrittr's `%>%`. Basically, it's a way to pipe an object forward from one function to the next, as opposed to having to nest a bunch of functions within one another.
+:::
+
+Ok, here's the data wrangling code:
+
+```{r data_wrangling}
+tab1 <- tab1 %>%
+  
+  # select only variables needed; ends_with() function is a nifty short cut to 
+  # grab all variables whose name ends with that string
+  select(c("patid","source","age","age_cat", "hispanic","sex","race","index_year", 
+           ends_with("indicator"), "combined_score_num")) %>%
+  
+  # mutate() is for creating new variables. Some of this should look pretty 
+  # similar to what you're used to in SAS. 
+  # c() function just combines multiple things and works similarly here to a
+  # SAS parenthetical list, i.e., race in ("No Information", ...)
+  mutate(race = if_else(race %in% c("No Information","Refuse to Answer","Unknown"), "Unknown", race),
+         
+         # factor() is a vector type for categorical data and it's important for
+         # table1 package because it's how table1 figures out what is categorical
+         # vs. continuous, and as we'll see below, how to order them in the output. 
+         hispanic = factor(hispanic),
+         sex = factor(sex),
+         index_year = factor(index_year),
+         statinindicator = factor(statinindicator),
+         aspirinindicator = factor(aspirinindicator),
+         smokingindicator = factor(smokingindicator),
+         diabetesindicator = factor(diabetesindicator),
+         ckdindicator = factor(ckdindicator),
+         esrdindicator = factor(esrdindicator),
+         hfejindicator = factor(hfejindicator),
+         chdindicator = factor(chdindicator),
+         pcrindicator = factor(pcrindicator),
+         strokeindicator = factor(strokeindicator),
+         padindicator = factor(padindicator),
+         ascvdindicator = factor(ascvdindicator),
+         afindicator = factor(afindicator),
+         copdindicator = factor(copdindicator),
+         asthmaindicator = factor(asthmaindicator),
+         depressionindicator = factor(depressionindicator),
+         goutindicator = factor(goutindicator),
+         source = factor(source),
+         anticogindicator = factor(anticogindicator),
+         ktindicator = factor(ktindicator),
+         osaindicator = factor(osaindicator)
+  ) %>%
+  # arrange() sorts.
+  arrange(patid) %>%
+  # distinct() picks out distinct values, here of patid.
+  distinct(patid, .keep_all = TRUE)
+
+
+# here we go in and work on specific columns of `tab1` dataset and 
+# order the levels (values) of that column in the way we want it presented in
+# the output table, using the factor() function. Basically, we're just taking 
+# the column as is, and replacing it with the same data, but telling R what is 
+# should be the intrinsic order of these values when R outputs anything with it. 
+# (Not actually changing given values for a given observation)
+tab1$race <- factor(tab1$race, levels = c("American Indian or Alaska Native",
+                                          "Asian",
+                                          "Black or African American",
+                                          "Native Hawaiian or Other Pacific",
+                                          "White",
+                                          "Multiple Race",
+                                          "Other",
+                                          "Unknown"))
+tab1$age_cat <- factor(tab1$age_cat, levels = c("<45 y", "45-64 y", ">65 y"))
+tab1$hispanic <- factor(tab1$hispanic, levels = c("Hispanic", "Not Hispanic", "Unknown"))
+
+# note that above I'm using base R coding, not tidyverse syntax. 
+# I could have accomplished the above with tidyverse (dplyr) syntax also:
+tab1 <- tab1 %>% 
+  mutate(race = factor(race, levels = c("American Indian or Alaska Native",
+                                        "Asian",
+                                        "Black or African American",
+                                        "Native Hawaiian or Other Pacific",
+                                        "White",
+                                        "Multiple Race",
+                                        "Other",
+                                        "Unknown")),
+         age_cat = factor(age_cat, levels = c("<45 y", "45-64 y", ">65 y")),
+         hispanic = factor(hispanic, levels = c("Hispanic", "Not Hispanic", "Unknown")),
+         ckdindicator = as.integer(ckdindicator))
+```
+
+## Labels and Units
+
+Here we can apply label and unit attributes to each column. Labels will be printed (in the output table) as specified here, and will be appended with units, if they're assigned. Note here I only assign one unit (to age), as most everything else is categorical. But, for example, BP would need units also if included.
+
+```{r labels}
+# Labels
+label(tab1$age) <- "Age"
+label(tab1$age_cat) <- "Age Category"
+label(tab1$sex) <- "Sex"
+label(tab1$race) <- "Race"
+label(tab1$hispanic) <-  "Ethnicity"
+label(tab1$smokingindicator) <- "Current Smoker"
+label(tab1$diabetesindicator) <- "Diabetes"
+label(tab1$ckdindicator) <- "Chronic kidney disease"
+label(tab1$esrdindicator) <- "End-stage renal disease"
+label(tab1$hfejindicator) <- "Heart failure w/ reduced EF"
+label(tab1$chdindicator) <- "Coronary heart disease"
+label(tab1$pcrindicator) <- "Prior coronary revascularization"
+label(tab1$strokeindicator) <- "Prior stroke or TIA"
+label(tab1$padindicator) <- "Peripheral arterial disease"
+label(tab1$ascvdindicator) <- "History of clinical ASCVD"
+label(tab1$afindicator) <- "Atrial fibrillation"
+label(tab1$copdindicator) <- "Chronic obstructive pulmonary disease"
+label(tab1$asthmaindicator) <- "Asthma"
+label(tab1$depressionindicator) <- "Depression"
+label(tab1$combined_score_num) <- "Combined Comorbidity Score"
+label(tab1$statinindicator) <- "Statin"
+label(tab1$aspirinindicator) <- "Aspirin"
+label(tab1$index_year) <- "Index Year"
+
+# Units
+units(tab1$age) <- "years"
+```
+
+## Setting up the output
+
+Here we tell table1 to use our label list, as well as what columns to give us. This is important for stratified columns (e.g., Medicaid and Medicare, or those with EHR and those without EHR data). I think you can do as many strata as you want, though obviously a lot will not look good in the table.
+
+```{r setup}
+#### Render Table 1 ####
+# Setup
+
+# here, the first string is the column header, and following the = sign is 
+# how to get just the patients that should be used for that column. 
+# so for everyone, we use the entire tab1 dataset. For Medicaid column, we 
+# subset() tab1 to get only those people who have source = "FLM"
+strata_t1 <- c(list("Overall Cohort" = tab1),
+               list("Medicaid-Insured" = subset(tab1, source == "FLM")),
+               list("Medicare-Insured" = subset(tab1, source == "MED")))
+
+# tell table1 where to get our labels
+labels_t1 <- list(
+  variables = list(age = render.varlabel(tab1$age),
+                   age_cat = render.varlabel(tab1$age_cat),
+                   sex = render.varlabel(tab1$sex),
+                   race = render.varlabel(tab1$race),
+                   hispanic = render.varlabel(tab1$hispanic),
+                   smokingindicator = render.varlabel(tab1$smokingindicator),
+                   diabetesindicator = render.varlabel(tab1$diabetesindicator),
+                   ckdindicator = render.varlabel(tab1$ckdindicator),
+                   esrdindicator = render.varlabel(tab1$esrdindicator),
+                   hfejindicator = render.varlabel(tab1$hfejindicator),
+                   chdindicator = render.varlabel(tab1$chdindicator),
+                   pcrindicator = render.varlabel(tab1$pcrindicator),
+                   strokeindicator = render.varlabel(tab1$strokeindicator),
+                   padindicator = render.varlabel(tab1$padindicator),
+                   ascvdindicator = render.varlabel(tab1$ascvdindicator),
+                   afindicator = render.varlabel(tab1$afindicator),
+                   copdindicator = render.varlabel(tab1$copdindicator),
+                   asthmaindicator = render.varlabel(tab1$asthmaindicator),
+                   depressionindicator = render.varlabel(tab1$depressionindicator),
+                   combined_score_num = render.varlabel(tab1$combined_score_num),
+                   statinindicator = render.varlabel(tab1$statinindicator),
+                   aspirinindicator = render.varlabel(tab1$aspirinindicator),
+                   index_year = render.varlabel(tab1$index_year)
+  ))
+```
+
+## Some functions to style the output
+
+Basically here we're just making some stylistic choices about what we want output to look like for categorical variables, continuous variables, and for the column headers. See the URL above for more of a description of these. But, you probably don't need to edit this at all for any tables you create.
+
+```{r fxs}
+# add commas to Ns and cell counts
+render.continuous <- function(x, ...) {
+  with(stats.default(x, ...), c("", "Mean \u00B1 SD"  = sprintf("%s \u00B1 %s", signif_pad(MEAN, 3, big.mark=","), signif_pad(SD, 3, big.mark=","))))
+}
+
+render.categorical <- function(x, ...) {
+  c("", sapply(stats.apply.rounding(stats.default(x)), function(y) with(y, sprintf("%s (%s%%)", prettyNum(FREQ, big.mark=","), PCT))))
+}
+
+render.strat <- function(label, n, ...) {
+  sprintf("<span class='stratlabel'>%s<br><span class='stratn'>(N=%s)</span></span>", label, prettyNum(n, big.mark=","))
+}
+```
+
+## Render the Table
+
+Now create the actual table.
+
+```{r render_table1}
+# Render Table 1 -- Will need to Save the HTML for export off ResVault
+table1(strata_t1, 
+       labels_t1, 
+       droplevels = TRUE, 
+       # these next three lines are just applying the functions we created above
+       # basically can be read as "for rendering continuous variables, use the 
+       # function render.continuous()", etc. 
+       render.continuous = render.continuous, 
+       render.strat = render.strat, 
+       render.categorical = render.categorical)
+
+# Can also save Table 1 for posterity, or to export as a CSV
+# would just need to uncomment the following code
+# t1 <- as.data.frame(table1(strata_t1, labels_t1, droplevels = TRUE,
+#                            render.continuous = render.continuous, render.strat = render.strat, render.categorical = render.categorical))
+# 
+# write_csv(t1, file = "path_to_directory/Table 1.csv")
+```
+
+Note that this output still needs a bit of editing, e.g., copying the data in the '1' row for the various indicators, up to the the row with the respective label, and then deleting the '0' row and what was the '1' row. I think a modification can probably be built into the package to do this routinely, or as an option, but I haven't had time to fool with it. In any event, this gets us pretty close.
+
+## Getting this into Word
+
+Ok, we have the table in HTML now, but we need it in Word. A straight copy + paste from R Studio viewer to word document does not work very well, because it either keeps all the HTML formatting (check by selecting all of the pasted table and adding all borders to the table), or it completely loses formatting if you do a Special Paste, i.e., no Word table structure any more.
+
+Here's a couple of ways around this (I'm sure there are others):
+
+1.  Export the output in the R Studio viewer to an HTML file on your computer. Then, open that file, hit CTRL+A (or CMD+A on Mac), CTRL + C, then go to Word Document and Paste Special -\> HTML. It typically doesn't look as pretty, but fixes both of the above issues.
+
+2.  Let Flextable do the heavy lifting for this.
+
+Here, I use flextable. Instead of printing the `table1()` function results, as above, we can instead save them to an object, named `tbl1` below. Then, convert it to a flextable, and have the flextable package export it as a word document.
+
+```{r word_out}
+#| output: false
+# same as above, but instead of printing, saving as object. 
+tbl1 <- table1(strata_t1, 
+               labels_t1, 
+               droplevels = TRUE, 
+               # these next three lines are just applying the functions we created above
+               # basically can be read as "for rendering continuous variables, use the 
+               # function render.continuous()", etc. 
+               render.continuous = render.continuous, 
+               render.strat = render.strat, 
+               render.categorical = render.categorical)
+
+# convert to flextable, then save as doc.
+# update path as needed. 
+t1flex(tbl1) %>% 
+  save_as_docx(path="./output/table1_output.docx")
+```
+
+Voila - here's the [output](labdocs/output/table1_output.docx).

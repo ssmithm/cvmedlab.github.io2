@@ -1,0 +1,47 @@
+---
+format: 
+  html:
+    include-in-header: 
+      - includes/icons.html
+      - includes/analytics.html
+page-layout: full
+---
+
+::: column-page
+# [Steven M. Smith]{style="color: #1E354B"}
+
+::: wrap-columns
+::: columns-50
+::: tight-text
+Assistant Professor  
+[Department of Pharmaceutical Outcomes & Policy](https://pop.pharmacy.ufl.edu/)\
+[Division of Cardiovascular Medicine, Department of Medicine](https://cardiology.medicine.ufl.edu/)
+
+Associate Director  
+[Center for Integrative Cardiovascular and Metabolic Disease](https://cicmd.center.ufl.edu/)
+
+Member  
+[Center for Drug Evaluation and Safety (CoDES)](https://codes.pharmacy.ufl.edu/){.btn-tertiary}
+
+University of Florida  
+:::
+:::
+
+::: columns-50
+![](assets/CICMD.jpg){fig-align="right"}
+:::
+:::
+:::
+
+::: column-page-inset
+### [Background]{style="color: #1E354B"}
+
+I am a pharmacist and epidemiologist specializing in cardiovascular medicine, especially hypertension. I obtained my PharmD in 2007 and MPH, with an emphasis in biostatistics and epidemiology in 2011, both from the University of Florida. I completed a Pharmacy Practice Residency at the NF/SG Veterans Affairs Hospital (2008) and a postdoctoral fellowship in Family Medicine at the University of Florida (2011). I started my career at the University of Colorado in 2011 and returned to the University of Florida in 2014.
+:::
+
+::: column-page-inset
+### [Contact]{style="color: #1E354B"}
+
+<a href="mailto:ssmith@cop.ufl.edu">[mail]{.material-symbols-rounded}ssmith\@cop.ufl.edu</a>\
+<a href="mailto:steve@stevenmsmith.org">[mail]{.material-symbols-rounded}steve\@stevenmsmith.org</a>
+:::

@@ -1,0 +1,265 @@
+---
+title: "Baseline Characteristics Table"
+format: 
+  html:
+    embed-resources: true  
+editor: visual
+---
+
+A common task for us is putting together a baseline characteristics table, or "Table 1." This is usually painful to do by hand, particularly when you often have to do it multiple times whenever a small change is made to a cohort. The following describes one way of automating much of this, using R and the `tbl_summary()` function in the gtsummary package.
+
+## Packages
+
+### {tidyverse}
+
+If you're not already familiar with it, I think you'll find [{tidyverse}](https://www.tidyverse.org/) extremely helpful - it is actually a bundle of packages centered around 'tidy' data, which is just a fancy description for data that take the form of 3 rules:
+
+1.  Each variable has its own column
+
+2.  Each observation has its own row.
+
+3.  Each value has its own cell.
+
+Outside of time-varying analyses, that's pretty much exactly the type of analytic dataset we are creating for most of our work.
+
+### {gtsummary}
+
+In addition to tidyverse, for the baseline characteristics table, the package [{gtsummary}](https://www.danieldsjoberg.com/gtsummary/) gets us pretty close to a final output. If you want to read more, see it's vignette at the above link. {gtsummary} is based on R Studio's [{gt} package](https://gt.rstudio.com/) which is quite a nice package and has some other really cool extensions (e.g., [{gtExtras}](https://jthomasmock.github.io/gtExtras/))
+
+### {haven}
+
+[{haven}](https://haven.tidyverse.org/) is a tidyverse package that reads SAS datasets directly. Particularly helpful for us since most of our initial data wrangling has to take place in SAS. If you haven't noticed already, base R is not particularly good at handling huge datasets (absent a lot of memory resources on a VM) because it completely stores them in memory. If you really want to try though, [{arrow}](https://arrow.apache.org/) may be your best bet.
+
+### {labelled}
+
+[{labelled}](https://cran.r-project.org/web/packages/labelled/vignettes/intro_labelled.html) allows us to apply a label to each variable as an "attribute." Gtsummary will use these labels in the table output instead of variable/column names.
+
+### {flextable}
+
+[{flextable}](https://ardata-fr.github.io/flextable-book/) will be used to get the final output into a word document.
+
+Let's load the packages (you'll probably get a lot of red text warning you about 'masked' objects -- don't sweat them).
+
+```{r packages}
+#| output: false
+#| messages: false
+#| warnings: false
+# if you need to install, you would use:
+# install.packages("gtsummary")
+# or
+# install.packages(c("tidyverse", "gtsummary"))
+
+# load the relevant packages
+library(tidyverse)
+library(gtsummary)
+library(haven)
+library(labelled)
+library(flextable)
+```
+
+## Load the data
+
+Here's where you load the SAS dataset, using the haven package.
+
+::: callout-tip
+## Some very basic R coding format.
+
+At the most basic level, R expects you to assign values to objects. The object can be thought of as a symbol (or name) allowing you to access the value inside. The value can be any number of things, including a vector of length one, a list, a data frame (a dataset that is a special type of list), a function, and other things. The basic formatting is `object <- value` , which tells R to assign to 'object' the 'value' using the `<-` assignment operator (you can also use an `=` for the assignment operator instead). The short-cut for the assignment operator on a Mac is Option+- (option and minus sign).
+:::
+
+We are going to assign a dataset, read from haven, to the object `tab1` (can be any name you want it to be). To do so, we need the `read_sas()` function from haven, and the thing that is returned from that function is an R-readable data frame. There's lots more options with this function than I use below, but the basics usually work well.
+
+::: callout-tip
+Note that R has case-sensitive variable/column names. Make your life a lot easier and rename variables to lowercase with the `rename_with()` function and `tolower` option, i.e., `rename_with(tolower)` (see below)
+:::
+
+```{r data}
+# note that the filepath needs forward slashes, or two backwards slashes,
+# e.g., "C:/Users/.../...sas7bdat" or "C:\\Users\\...\\...sas7bdat"
+#
+# tab1 <- read_sas("E:/.../.../...sas7bdat") %>% 
+#   rename_with(tolower)    
+```
+
+## Data wrangling for table1
+
+I already have my data loaded in an object called `aim1cohort`, so I'm just going to assign it the new name `tab1`, but you would not need to run this if you run above to load the data directly from a SAS dataset.
+
+```{r a1c}
+#| code-fold: true
+load(file = "/Users/stevensmith/Dropbox (UFL)/R Projects/K01-Initial_Antihtn_Prescribing/data/aim1cohort.rda")
+
+tab1 <- aim1cohort 
+```
+
+::: callout-tip
+## A note on 'pipe's
+
+One thing that's worth reading up on the `%>%` "pipe". See this [here](https://magrittr.tidyverse.org/reference/pipe.html) or [here](https://r4ds.had.co.nz/pipes.html). It's a tidyverse thing originally coming from the magrittr package. Because it's quite popular, Base R has now incorporated its own pipe now which does almost exactly the same thing, but looks like this: `|>`. You can use ctrl+shift+M as a short-cut, and in your R-studio preferences, you can tell R-Studio whether to use the native pipe `|>` or magrittr's `%>%`. Basically, it's a way to pipe an object forward from one function to the next, as opposed to having to nest a bunch of functions within one another.
+:::
+
+Ok, here's the data wrangling code:
+
+```{r data_wrangling}
+# generally bad practice unless you know exactly what you're doing - you don't want to write
+# over your objects, which is what I'm doing here:  writing over tab1 with a modified tab1
+tab1 <- tab1 %>%
+  
+  # select only variables needed; ends_with() function is a nifty short cut to 
+  # grab all variables whose name ends with that string
+  select(c("patid","source","age","age_cat", "hispanic","sex","race","index_year", 
+           ends_with("indicator"), "combined_score_num")) %>%
+  
+  # mutate() is for creating new variables. Some of this should look pretty 
+  # similar to what you're used to in SAS. 
+  # c() function just combines multiple things and works similarly here to a
+  # SAS parenthetical list, i.e., race in ("No Information", ...)
+  mutate(race = if_else(race %in% c("No Information","Refuse to Answer","Unknown"), "Unknown", race),
+         sex = if_else(sex == "Unknow", "Unknown", sex),
+         hispanic = if_else(hispanic %in% c("Other","Refuse to Answer", "No Information", "Unknown"), "Unknown", hispanic),
+         
+         # The vector type is important for what is passed on to gtsummary, because
+         # the gtsummary packages does differet things with different vector types.
+         # for example, a numeric vector gets characterized by measures of central
+         # tendency, i.e., median (IQR), or mean ± SD. A factor will get processed
+         # as a categorical variable. BUT, if you want {gtsummary} to not bother with
+         # giving you the N (%) of people without a comorbidity (e.g., CKDindicator = 0)
+         # then you want to set those as INTEGERS. 
+         # Below, we set demographics as factors, because we want all levels output. 
+         # But, we set the comorbidities as integers, because we only want to know the 
+         # n (%) of those who have indicator=1. 
+         #
+         # The following tidyverse/dplyr syntax accomplishes this quickly, by 
+         # gathering all the variables we want as factors, and all the variables
+         # we want as integers, and applying the relevant function in purrr style 
+         # ~lambda:
+         across(c(hispanic, sex, index_year), ~factor(.)),
+         across(ends_with("indicator"), ~as.integer(.))
+  ) %>%
+  # arrange() sorts (here, by patid).
+  arrange(patid) %>%
+  # distinct() picks out distinct values, here of patid.
+  distinct(patid, .keep_all = TRUE)
+
+
+# here we go in and work on specific columns of `tab1` dataset and 
+# order the levels (values) of that column in the way we want it presented in
+# the output table, using the factor() function. Basically, we're just taking 
+# the column as is, and replacing it with the same data, but telling R what is 
+# should be the intrinsic order of these values when R outputs anything with it. 
+# (Not actually changing given values for a given observation)
+tab1$race <- factor(tab1$race, levels = c("American Indian or Alaska Native",
+                                          "Asian",
+                                          "Black or African American",
+                                          "Native Hawaiian or Other Pacific",
+                                          "White",
+                                          "Multiple Race",
+                                          "Other",
+                                          "Unknown"))
+tab1$age_cat <- factor(tab1$age_cat, levels = c("<45 y", "45-64 y", ">65 y"))
+tab1$hispanic <- factor(tab1$hispanic, levels = c("Hispanic", "Not Hispanic", "Unknown"))
+
+# note that above I'm using base R coding, not tidyverse syntax. 
+# I could have accomplished the above with tidyverse (dplyr) syntax also:
+tab1 <- tab1 %>% 
+  mutate(race = factor(race, levels = c("American Indian or Alaska Native",
+                                        "Asian",
+                                        "Black or African American",
+                                        "Native Hawaiian or Other Pacific",
+                                        "White",
+                                        "Multiple Race",
+                                        "Other",
+                                        "Unknown")),
+         age_cat = factor(age_cat, levels = c("<45 y", "45-64 y", ">65 y")),
+         hispanic = factor(hispanic, levels = c("Hispanic", "Not Hispanic", "Unknown")),
+         source = factor(source, levels = c("FLM", "MED"), labels = c("Medicaid", "Medicare")))
+```
+
+## Labels
+
+Here we can apply label and unit attributes to each column. Labels will be printed (in the output table) as specified here. It would be nice if we could also create units (e.g., years for age, or mm Hg for BP), but {gtsummary} doesn't appear to support that yet, so the work-around is to just add units to the label.
+
+```{r labels}
+# Labels
+var_label(tab1) <- list(age = "Age, years",    # units added
+                        age_cat = "Age Category",
+                        sex = "Sex",
+                        race = "Race",
+                        hispanic = "Ethnicity",
+                        smokingindicator = "Current Smoker",
+                        diabetesindicator = "Diabetes",
+                        ckdindicator = "Chronic kidney disease",
+                        esrdindicator = "End-stage renal disease",
+                        hfejindicator = "Heart failure w/ reduced EF",
+                        chdindicator = "Coronary heart disease",
+                        pcrindicator = "Prior coronary revascularization",
+                        strokeindicator = "Prior stroke or TIA",
+                        padindicator = "Peripheral arterial disease",
+                        ascvdindicator = "History of clinical ASCVD",
+                        afindicator = "Atrial fibrillation",
+                        copdindicator = "Chronic obstructive pulmonary disease",
+                        asthmaindicator = "Asthma",
+                        depressionindicator = "Depression",
+                        combined_score_num = "Combined Comorbidity Score",
+                        statinindicator = "Statin",
+                        aspirinindicator = "Aspirin",
+                        index_year = "Index Year")
+
+```
+
+## Outputting the table
+
+Here we tell **{gtsummary}** to create the table, and we apply a few customizations to the table. I've opted here for columns stratified by source, as well as an overall column. You could also add a p-value column (with a piped `add_p()`) as well as other columns. See the {gtsummary} vignette at the link above for potential options.
+
+```{r output}
+tab1 |> 
+  
+  # restrict the table that is passed to the summary to only the variables needed 
+  # else, tbl_summary() will create statistics for everything in the dataset. 
+  select(age, age_cat, sex, race, hispanic, smokingindicator, diabetesindicator, 
+         ckdindicator, esrdindicator, hfejindicator, chdindicator, pcrindicator,
+         strokeindicator, padindicator, ascvdindicator, afindicator, copdindicator,
+         asthmaindicator, depressionindicator, combined_score_num, statinindicator,
+         aspirinindicator, index_year, source) |> 
+  
+  # call the tbl_summary() function with a few customized options
+  tbl_summary(
+    
+    # stratify the table by values of 'source'
+    by = source,
+    
+    # we don't really need this, b/c we already dealt with missing values above by
+    # categorizing them as "Unknown", but we could label them here however we wanted,
+    # e.g., "(Missing)".
+    missing_text = "(Missing)",
+    
+    # default is to provide median (IQR), but lets say we wanted mean ± standard dev.
+    statistic = list(all_continuous() ~ "{mean} ± {sd}")
+    ) |> 
+  
+  # add a column for the entire cohort grouped together
+  add_overall() 
+
+```
+
+That gives us the table - and if we wanted to save to a Word document, it's just a couple extra lines of code (everything below is exactly the same as above, except for the pipe on the third to last line of code, and the last two lines of code):
+
+```{r export}
+tab1 |> 
+  select(age, age_cat, sex, race, hispanic, smokingindicator, diabetesindicator, 
+         ckdindicator, esrdindicator, hfejindicator, chdindicator, pcrindicator,
+         strokeindicator, padindicator, ascvdindicator, afindicator, copdindicator,
+         asthmaindicator, depressionindicator, combined_score_num, statinindicator,
+         aspirinindicator, index_year, source) |> 
+  tbl_summary(
+    by = source,
+    missing_text = "(Missing)",
+    statistic = list(all_continuous() ~ "{mean} ± {sd}")
+    ) |> 
+  add_overall() |> 
+  as_flex_table() |> 
+  save_as_docx(path="./output/table1_output_alt.docx")
+
+```
+
+Voila! [This output](labdocs/output/table1_output_alt.docx) is pretty darn close to final output! Just needs a bit of freshening up, e.g., with bolding of column headers.

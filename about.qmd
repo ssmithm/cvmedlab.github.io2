@@ -1,0 +1,35 @@
+---
+# about:
+#   template: solana
+#   image: assets/steve_profile.jpg
+#   image-shape: rounded
+#   image-width: 20em
+format: 
+  html:
+    include-in-header: 
+      - includes/icons.html
+      - includes/analytics.html
+page-layout: full
+execute:
+  echo: false
+  message: false
+  warning: false
+---
+
+::: grid
+::: g-col-4
+![](assets/CVmedLab_Logo-01.svg){fig-align="left"}
+:::
+
+::: g-col-8
+I lead a lab of thoughtful, smart, [hardworking trainees](people.qmd) interested in studying treatments for cardiovascular disease. The UF CV med Lab is focused on cardiovascular effects of drugs, particularly in real-world populations. This includes conventionally cardiovascular drugs (e.g., antihypertensives), but also drugs not typically associated with cardiovascular effects (antidiabetic drugs, antibiotics, antidepressants, etc...), but which have, or may have, cardiovascular consequences.
+:::
+:::
+
+### [Interested in Joining Us?]{style="color: #1E354B"}
+
+If you are a [**current graduate student**]{style="color: #1E354B"} or [**pharmacy student**]{style="color: #1E354B"} at UF and interested in working with our group on comparative effectiveness research for cardiometabolic drugs, in particular antihypertensives, or interested in methods related to use of EHR data in epidemiologic research, please feel free to [email me](ssmith@cop.ufl.edu) to discuss.
+
+If you are a [**prospective graduate student**]{style="color: #1E354B"} interested in working with me specifically then send me an email describing your interests along with your CV. I take graduate students in the Pharmacoepidemiology and Safety Sciences program. Note you must meet the qualifications for admittance to the respective PhD program and be accepted into the program. More information is available at the above link.
+
+If you are a [**prospective postdoctoral fellow**]{style="color: #1E354B"} interested in pharmacoepidemiologic/outcomes research, please [contact me](mailto:ssmith@cop.ufl.edu) directly and include your CV.

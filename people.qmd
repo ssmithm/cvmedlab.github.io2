@@ -1,0 +1,126 @@
+---
+format: 
+  html:
+    include-in-header: 
+      - includes/icons.html
+      - includes/analytics.html
+page-layout: full
+---
+
+::: grid
+::: g-col-12
+## [People]{style="color: #1E354B"}
+
+##### PI {style="color: #7f7f7f"}
+:::
+
+::: g-col-2
+![](assets/CICMD.jpg){fig-align="center"}
+:::
+
+::: g-col-10
+[**Steven Smith, PharmD, MPH**]{style="color: #1E354B"} is an Assistant Professor in the Department of Pharmaceutical Outcomes & Policy (College of Pharmacy) and Division of Cardiovascular Medicine (College of Medicine) at the University of Florida. I also serve as the Associate Director (population sciences) for the UF Center for Integrative Cardiovascular and Metabolic Disease. My research methodology is fairly wide-ranging, encompassing clinical trial work and observational methods (e.g., with claims and electronic health record data), though my therapeutic focus is primarily in the field of hypertension.
+:::
+
+::: g-col-12
+##### Current Postdoc(s) {style="color: #7f7f7f"}
+:::
+
+::: g-col-2
+![](assets/christie_monahan.jpg){fig-align="center"}
+:::
+
+::: g-col-10
+[**Christie Monahan, PharmD**]{style="color: #1E354B"} is the 2021-2023 postdoctoral fellow in the Departments of Pharmacotherapy and Translational Research and Community Health and Family Medicine. Her work is primarily centered on health services research around pharmacist-managed transitions of care. She is also involved in our hypertension research.
+:::
+
+::: g-col-12
+##### Current Grad Students {style="color: #7f7f7f"}
+:::
+
+::: g-col-2
+![](assets/shailina_keshwani.jpg){fig-align="center"}
+:::
+
+::: g-col-10
+[**Shailina Keshwani, MS**]{style="color: #1E354B"} is a PhD student in the Department of Pharmaceutical Outcomes and Policy. Her research is focused on the intersection of pain and cardiovascular disease and specifically use of analgesics in patients with cardiovascular disease who have contraindications to such medications.
+:::
+
+::: g-col-2
+![](assets/asinamai_ndai.jpg){fig-align="center"}
+:::
+
+::: g-col-10
+[**Asinamai Ndai, MS**]{style="color: #1E354B"} is a PhD student in the Department of Pharmaceutical Outcomes and Policy. His research is focused on the intersection of hypertension and HIV.
+:::
+
+::: g-col-2
+![](assets/kayla_smith.jpg){fig-align="center"}
+:::
+
+::: g-col-10
+[**Kayla Smith, PharmD**]{style="color: #1E354B"} is a PhD student in the Department of Pharmaceutical Outcomes and Policy. She previously worked with me on several project characterizing antihypertensive use patterns during her Doctor of Pharmacy degree program.
+:::
+
+::: g-col-12
+##### Analyst(s) {style="color: #7f7f7f"}
+:::
+
+::: g-col-2
+![](assets/marta-profile-photo.jpg){fig-align="center"}
+:::
+
+::: g-col-10
+[**Marta Walsh, MS**]{style="color: #1E354B"} is our analyst and basically single-handedly manages our messy data and keeps us moving forward. She's a former UF and Embry-Riddle grad and our shop wouldn't be what it is without her.
+:::
+
+::: g-col-12
+##### Former Trainees {style="color: #7f7f7f"}
+:::
+
+::: g-col-2
+![](assets/raj_desai.jpg){fig-align="center"}
+:::
+
+::: g-col-10
+[**Raj Desai, PhD**]{style="color: #1E354B"} was my first PhD student in the Department of Pharmaceutical Outcomes and Policy. His work was primarily centered on use of secondary datasets (administrative claims, EHR) for studying cardiovascular outcomes and performing comparative effectiveness research in patients with complicated antihypertensive regimens. He is now an Associate - Health Economics and Outcomes Research at the Analysis Group in Boston, MA.
+:::
+
+::: g-col-2
+![](assets/chris-piszczatoski.jpg){fig-align="center"}
+:::
+
+::: g-col-10
+[**Chris Piszczatoski, PharmD**]{style="color: #1E354B"} was our 2019-2021 postdoctoral fellow in the Departments of Pharmacotherapy and Translational Research and Community Health and Family Medicine. He is now on staff in the UF Community Health and Family Medicine.
+:::
+
+::: g-col-2
+![](assets/G_Dawwas-CROP.jpg){fig-align="center"}
+:::
+
+::: g-col-10
+[**Ghadeer Dawwas, PhD**]{style="color: #1E354B"} was a postdoctoral fellow (2019-2020) in pharmacoepidemiology, with a focus on cardiometabolic outcomes of novel antidiabetic agents. She is now on faculty at Vanderbilt University.
+:::
+
+::: g-col-2
+![](assets/scott_garland.jpg){fig-align="center"}
+:::
+
+::: g-col-10
+[**Scott Garland, PharmD**]{style="color: #1E354B"} was our 2017-2019 postdoctoral fellow in the Departments of Pharmacotherapy and Translational Research and Community Health and Family Medicine. He is now on faculty of the FSU College of Medicine.
+:::
+
+::: g-col-2
+![](assets/andrew_hwang.jpg){fig-align="center"}
+:::
+
+::: g-col-10
+[**Andrew Hwang, PharmD**]{style="color: #1E354B"} was our 2015-2017 postdoctoral fellow in the Departments of Pharmacotherapy and Translational Research and Community Health and Family Medicine. He is now on faculty at the Massachusetts College of Pharmacy and Health Sciences.
+:::
+
+::: g-col-12
+## [Join the Group]{style="color: #1E354B"}
+
+See the [about page](about.qmd) for information on joining the group. 
+:::
+:::

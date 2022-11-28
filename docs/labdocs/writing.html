@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Steven M. Smith">
+
+<title>CV med Lab - Manuscript Writing</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed fullcontent">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">{CVmedLab}</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">about</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../people.html">people</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../research.html">research</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../papers.html">papers</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/ssmithm?tab=repositories">tools</a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lab-docs" role="button" data-bs-toggle="dropdown" aria-expanded="false">lab docs</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-lab-docs">    
+        <li>
+    <a class="dropdown-item" href="../labdocs/table1_gtsummary.html">
+ <span class="dropdown-text">Table 1 {R}</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../labdocs/cumulative_incidence.html">
+ <span class="dropdown-text">Cumulative Incidence Curves {R}</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../labdocs/writing.html">
+ <span class="dropdown-text">Scientific Writing</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ssmithm"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/SteveSmithUF"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/steven-smith-09b80659/"><i class="bi bi-linkedin" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.researchgate.net/profile/Steven_Smith16/"><i class="bi bi-researchgate" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Manuscript Writing</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Steven M. Smith </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+
+</header>
+
+<p>Whether writing for medical journals, patient notes, or any other professional reason, you should strive to effectively and efficiently communicate your ideas to the reader. Developing good writing skills requires effort, patience, and practice, but can dramatically improve the amount of information that a reader takes away. Moreover, in the professional realm, inefficient communication skills can lead others to infer that you are less competent as a professional.</p>
+<p>Consider the following examples:</p>
+<blockquote class="blockquote">
+<p>“All patients were followed every 6 weeks for the first 6 months, and every 6 months thereafter until 2 years after the last patient was enrolled.”</p>
+</blockquote>
+<p>Why were they following the patients around?</p>
+<blockquote class="blockquote">
+<p>“Among the participants, 46% of the women and 37% of the men were black at the beginning of the study.”</p>
+</blockquote>
+<p>What were they at the end of the study?</p>
+<p>And, these quotes, verbatim from real hospital charts:</p>
+<blockquote class="blockquote">
+<p>“Patient has chest pain if she lies on her left side for over a year.”</p>
+<p>“On the second day the knee was better, and on the third day it disappeared.”</p>
+<p>“The patient is tearful and crying constantly. She also appears to be depressed.”</p>
+<p>“The patient has been depressed since she began seeing me in 1993.”</p>
+<p>“The patient refused autopsy.”</p>
+<p>“The patient has no previous history of suicides.”</p>
+<p>“Patient has left white blood cells at another hospital.”</p>
+<p>“The skin was moist and dry.”</p>
+<p>“Large brown stool ambulating in the hall.”</p>
+<p>“She has no rigors or shaking chills, but her husband states she was very hot in bed last night.”</p>
+<p>“While in ER, she was examined, x-rated and sent home.”</p>
+<p>“The pelvic exam will be done later on the floor.”</p>
+<p>“Patient was seen in consultation by Dr.&nbsp;X, who felt we should sit on the abdomen and I agree.”</p>
+<p>“Discharge status: Alive but without my permission.”</p>
+<p>“Had to go back to hospital cause he blew up.”</p>
+</blockquote>
+<p>Although you can probably guess what most of these examples were trying to communicate, they fall short of effectively conveying the intended message. Hopefully, the following information is useful in developing your scientific manuscripts, and I encourage you to continue practicing these skills throughout your professional career.</p>
+<section id="the-three-cs-clarity-1" class="level1">
+<h1>The Three C’s: <em>Clarity</em> (#1)</h1>
+<section id="active-vs.-passive-construction" class="level2">
+<h2 class="anchored" data-anchor-id="active-vs.-passive-construction">Active vs.&nbsp;Passive Construction</h2>
+<p>Readers rely on deeply-embedded syntactic preferences. For the English language, the conventional syntax that readers expect is a sentence following a subject-verb-object order. Consequently, atypical syntax will slow a reader down, increase the amount of deciphering the brain must perform, and reduce the amount of information retained. However, even with conventional subject-verb-object order, a long and complex sentence can slow down reading and increase brain activity.</p>
+<p>Active construction is easier to read than passive construction. With active construction, the main actor of the sentence is the grammatical subject, followed by an action verb, then the result or object.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Passive Construction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>“A decision was made by the committee to proceed.”</em></p>
+<ul>
+<li>Longer</li>
+<li>More indirect</li>
+<li>Less clear</li>
+<li>Less memorable<br>
+</li>
+<li>More difficult for readers to process</li>
+<li>Confounds the readers expectation about sentence structure</li>
+<li>Inverts the chronological order</li>
+</ul>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Active Construction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>“The committee made a decision to proceed.”</em></p>
+<ul>
+<li>Shorter</li>
+<li>More efficient</li>
+<li>More direct</li>
+<li>More memorable</li>
+<li>Easier for readers to process</li>
+<li>Replicates the chronological order of events</li>
+<li>Conforms to reader expectations about sentence structure</li>
+</ul>
+</div>
+</div>
+<p>The quick litmus test for determining if your sentence is active vs.&nbsp;passive is to ask yourself “Who’s doing the <verb> here?”</verb></p>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Example
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>“Additional funding can be identified through reductions in other government spending, increased Medicare taxes and in continuous improvement of care delivery processes.”</p>
+<p>Ask yourself: Who’s doing the <strong>identifying</strong> here? The answer is you! The sentence is essentially saying “You can identify additional funding through ….” However, the grammatical subject of the sentence is actually “Additional funding.” So, if the answer to your litmus test question isn’t the grammatical subject of the sentence, then the sentence is passive.</p>
+<p>Now, consider the sentence rewritten in this way: “Congress could free up additional funding by reducing other government spending, increasing Medicare taxes and promoting continuous improvement of care delivery processes.” Who is doing the <strong>freeing up</strong> of additional funds here? Congress is, and congress is the grammatical subject; thus, this sentence is constructed actively.</p>
+</div>
+</div>
+</div>
+<p>Be careful not to assume that a passive verb will necessarily make the sentence passive. Passive construction and passive verbs aren’t the same thing. You can have active construction with a passive verb, but you cannot have passive construction with an active verb.</p>
+<p>For example:</p>
+<blockquote class="blockquote">
+<p>“Researchers were uncertain about the significance of these unanticipated results.”</p>
+</blockquote>
+<p>Passive verb, active sentence. (Who was uncertain?)</p>
+<blockquote class="blockquote">
+<p>“In the studies used, some variability was discovered in the choice and definition of fatal outcomes.”</p>
+</blockquote>
+<p>Passive verb, passive sentence. (Who is doing the discovering?)</p>
+<p>Passive verbs are OK, but you should make your verbs portray action whenever possible. When you use active verbs, you can avoid adding in unnecessary adverbs and prepositions, which should improve the efficiency of your writing.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Passive verbs
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Some commonly used passive verbs include: <strong>is</strong>, <strong>was</strong>, <strong>were</strong>, <strong>have</strong>, <strong>has</strong>, <strong>has been</strong>, and <strong>appeared</strong></p>
+</div>
+</div>
+</section>
+<section id="avoid-expletives" class="level2">
+<h2 class="anchored" data-anchor-id="avoid-expletives">Avoid Expletives</h2>
+<p>Expletives (“there is/there are”) invert the order of the sentence (S-V-O) that the reader is expecting. Moreover, expletives place a meaningless adverb where readers expect the subject.</p>
+<p>For example,</p>
+<blockquote class="blockquote">
+<p><em>“</em>There was some variability among studies in their choice and definition of fatal outcomes.”</p>
+</blockquote>
+<p>What is the grammatical subject of the sentence? Where does it fit in the sentence with regard to order? The sentence could be rewritten as “In the studies used, some variability existed in the choice and definition of fatal outcomes.” Although this version adds one word to the length, it uses the conventional S-V-O syntax, making it easier to comprehend on the first read-through.</p>
+</section>
+<section id="avoid-nominalizations" class="level2">
+<h2 class="anchored" data-anchor-id="avoid-nominalizations">Avoid Nominalizations</h2>
+<p>Nominalizations are verbs turned into nouns. They often end in suffixes like –iate or –tion or they may begin with prefixes like pre-, de-, un-, in-, or re-. Nominalizations tend to be abstract and forgettable. Moreover, they rob your verb of action and lend themselves to passive sentences.</p>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Examples of Nominalizations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>Transformation = transform</p></li>
+<li><p>Identification = identify</p></li>
+<li><p>Utilization = use (this one is used all the time in our world!)</p></li>
+<li><p>Termination = end or fire</p></li>
+</ul>
+</div>
+</div>
+<p>Consider the following example:</p>
+<blockquote class="blockquote">
+<p>“Consolidation of the data was arranged by a coordinating center”</p>
+</blockquote>
+<p>versus:</p>
+<blockquote class="blockquote">
+<p>“A coordinating center consolidated the data.”</p>
+</blockquote>
+<p>Can you spot the nominalization? Which sentence reads better?</p>
+</section>
+<section id="avoid-abstractions" class="level2">
+<h2 class="anchored" data-anchor-id="avoid-abstractions">Avoid Abstractions</h2>
+<p>Always try to use actors or tangible objects as your grammatical subjects rather than abstractions. Actors make sentences more concrete and easier to remember. Furthermore, actors lend themselves to active sentences and verbs.</p>
+<p>Consider the following example:</p>
+<blockquote class="blockquote">
+<p>“Completion of this process by the nurse will allow him to have greater success and stability in the new role.”</p>
+</blockquote>
+<p>What is the grammatical subject of this sentence? Consider this re-write: “Once the nurse completes this process, he’ll be more successful and more stable in his new role.” Which sentence is easier to read? Also, notice the length of each sentence. Abstractions make sentences longer.</p>
+<p>Compare the following sentences:</p>
+<blockquote class="blockquote">
+<p>“The short longevity of most common restorations and especially those of resin-based composite materials calls for detailed studies of factors which may lead to an extension of the lifetime of restorations.”</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“Resin-based composite materials have relatively short longevity.”</p>
+</blockquote>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Examples of Actors
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>We/I/they/he</p></li>
+<li><p>The partners</p></li>
+<li><p>The recent study</p></li>
+<li><p>The state of Florida</p></li>
+<li><p>The business plan</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="avoid-isolated-pronouns" class="level2">
+<h2 class="anchored" data-anchor-id="avoid-isolated-pronouns">Avoid Isolated Pronouns</h2>
+<p>Choose strong subjects by avoiding isolated pronouns like this, that, these, those, or it as subjects of your sentences. These pronouns introduce ambiguity to your sentence and will force your reader to backtrack in a sentence to verify their meaning.</p>
+<p>For example:</p>
+<blockquote class="blockquote">
+<p>“This resulted in the entire department performing better than quarterly earnings forecasts.”</p>
+</blockquote>
+<p>What resulted in the department performing better? We don’t know without going back to the sentence before. An easy bandaid fix is simply specifying the subject: “This strategy resulted in ….”</p>
+<blockquote class="blockquote">
+<p>“Despite this connection, psychosocial stressors remain under-recognized as a risk factor for heart disease compared to more traditional factors such as diabetes, hyperlipidemia, and tobacco use. Previously, this may have been due to a poor understanding of the pathophysiologic mechanisms behind this mind-heart interaction.”</p>
+</blockquote>
+<p>Can you spot the isolated pro-noun? What is the isolated pronoun referring to?</p>
+</section>
+<section id="place-subjects-close-to-the-beginning-of-a-sentence" class="level2">
+<h2 class="anchored" data-anchor-id="place-subjects-close-to-the-beginning-of-a-sentence">Place Subjects Close to the Beginning of a Sentence</h2>
+<p>Readers will unconsciously search for the subject of the sentence, then for the verb, before they are able to absorb other content. Consequently, readers will perceive your sentences as difficult to read and recall when you place too much information at the beginning of your sentence or between the subject and verb.</p>
+<p>Consider the following sentences. Which sentence is easier to follow?</p>
+<blockquote class="blockquote">
+<p>“A protocol specifying the baseline, follow-up, and outcome data to be collected, and the methods of analysis, was developed and given written approval by all study groups by August, 2005.”</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“By August 2005, all study groups had created and approved a protocol, specifying the baseline, follow-up, and outcome da-ta to be collected, as well as methods of analysis.”</p>
+</blockquote>
+</section>
+</section>
+<section id="the-three-cs-continuity-2" class="level1">
+<h1>The Three C’s: <em>Continuity</em> (#2)</h1>
+<p>When we talk about how a sentence “flows,” we really mean that the sentence seems logically or linguistically related to the sentences around it. We also mean that the contents of that sentence refer to the sentences surrounding it. Lastly, we mean that the rhythm of the sentence is somewhat varied from the sentences before and after it. Interestingly, research suggests that if every sentence sounds exactly the same, readers will subconsciously attribute a lower intelligence level to the writer.</p>
+<p>Readers will find paragraphs cohesive and continuous when they encounter:</p>
+<ul>
+<li><p>Important information in the stressed position</p></li>
+<li><p>Sentences that display careful sequencing</p></li>
+<li><p>Transitions introducing every 2-3 sentences</p></li>
+<li><p>Use of consistent words/themes in the paragraph (related to sequencing).</p></li>
+</ul>
+<section id="stress-position" class="level2">
+<h2 class="anchored" data-anchor-id="stress-position">Stress Position</h2>
+<p>The stress position of any sentence is the end of the sentence. This concept is true for both written and spoken language. When we speak, as we near the end of a sentence, our voices ordinarily rise in pitch on the last few words to stress the ending more strongly than the beginning or middle. As a result, items named in the ends of sentences, paragraphs, and documents receive more stress than items at the beginnings and middles. Readers find the greatest impact in the information at the end and will subsequently retain the information the longest.</p>
+<p>The order of impact is as follows: End &gt; Beginning &gt; Middle.</p>
+<p>Interestingly, good writers will put less than stellar information or results (or limitations) in the beginning or middle of a sentence or paragraph in order to minimize the impact of such information.</p>
+<p>To maximize the impact of the stress position(s), you should avoid sentences that are too lengthy. Long sentences:</p>
+<ul>
+<li><p>Provide few opportunities for emphasis to spotlight important items for readers to remember/focus on</p></li>
+<li><p>Can cause readers to lose track of the main actor/action in the sentence and lose track of relationships between items, phrases, or clauses</p></li>
+<li><p>Can deprive writers of opportunities for introducing readers to new information via carefully designed sequences that place new information in the stress positions of sentences, followed by sentences that use as their subjects/topics the contents of the previous sentences’ stress</p></li>
+</ul>
+<p>For example:</p>
+<blockquote class="blockquote">
+<p>“The aims of this study are therefore three fold. First, we will quantify the effect of multi-drug use on the functional status of the frail elderly; second, we will determine the relationship between multi-drug use and health of the frail elderly; and third, we will define the impact of multi-drug use on the QOL of the frail elderly.”</p>
+</blockquote>
+<p>Compare the above with this group of sentences:</p>
+<blockquote class="blockquote">
+<p>“Therefore, this study has three aims. First, we will quantify the effect of multi-drug use on the functional status of the frail elderly. Second, we will determine the relationship between multi-drug use and health of the frail elderly. And, finally, we will define the impact of multi-drug use on the QOL of the frail elderly.”</p>
+</blockquote>
+</section>
+<section id="sequencing" class="level2">
+<h2 class="anchored" data-anchor-id="sequencing">Sequencing</h2>
+<p>Readers will absorb easily even the most complex and unfamiliar information if you sequence your sentences carefully. You should always place already-introduced information at the outset of your sentences. This can be done in two ways:</p>
+<ol type="1">
+<li><p><strong>Make the grammatical subject in the sentence refer to item(s) in the stress position of the previous sentence.</strong> This word need not necessarily match exactly a word in the previous sentences’ stress.</p>
+<p>For example:</p>
+<blockquote class="blockquote">
+<p>“Despite the availability of effective pharmacological and psychotherapeutic treatments, a recent community survey found that only 16% of those with panic disorder were receiving appropriate medical management . In part, this problem is a natural consequence of the phenomenology of panic disorder and panic attacks. Panic attacks are experienced as the sudden and unexplained feeling of terror that is accompanied by severe and frightening physical symptoms such as chest pain, difficulty breathing, and heart palpitations.”</p>
+</blockquote>
+<p>Versus:</p>
+<blockquote class="blockquote">
+<p>“Despite the availability of effective pharmacological and psychotherapeutic treatments, a recent community survey found that <strong>only 16% of those with panic disorder were receiving appropriate medical management</strong>. <strong>In part, this problem</strong> is a natural consequence of the phenomenology of panic disorder and <strong>panic attacks</strong>. <strong>Panic attacks</strong> are experienced as the sudden and unexplained feeling of terror that is accompanied by severe and frightening physical symptoms such as chest pain, difficulty breathing, and heart palpitations.”</p>
+</blockquote>
+<p>Notice the bolded sections. The second sentence refers back to the problem highlighted in the stress position of the first sentence. In this case, the subject of sentence #2 does not repeat verbatim the stress of sentence #1. In contrast, the third sentence uses sentence #2’s stress position as its grammatical subject.</p></li>
+<li><p><strong>Make the grammatical subject refer back to the subject of the preceding sentence.</strong></p>
+<p>For example:</p>
+<blockquote class="blockquote">
+<p>“Although most of these <strong>screening tools</strong> have demonstrated good overall psychometric properties, <strong>they</strong> are quite variable in their ability to accurately detect panic disorder. For example, <strong>PRIME-MD</strong>, one of the most widely used psy-chiatric screening instruments, has been reported to identify 83% of general medical patients with”any” psychiatric disorder, but only 57% of those with panic disorder. <strong>Only a few screening tools</strong> have been designed specifically to detect panic.”</p>
+</blockquote>
+<p>Notice the continuity between the sentences: each sentence’s grammatical subject is closely related (or verbatim) to the previous sentence.</p></li>
+</ol>
+</section>
+<section id="use-transitions-liberally" class="level2">
+<h2 class="anchored" data-anchor-id="use-transitions-liberally">Use Transitions Liberally</h2>
+<p>Transitions allow you to position the information your readers are about to encounter relative to what they have already encountered. Transitions should be used frequently (i.e.&nbsp;every 2-3 sentences if appropriate).</p>
+<div id="tbl-panel" class="tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Table&nbsp;1: Transition Words &amp; Phrases</p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-first" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-panel" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(a) Single-Word Transitions</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Also</td>
+<td style="text-align: left;">Nevertheless</td>
+<td style="text-align: left;">Consequently</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">However</td>
+<td style="text-align: left;">Because</td>
+<td style="text-align: left;">Subsequently</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Although</td>
+<td style="text-align: left;">Unfortunately</td>
+<td style="text-align: left;">Therefore/Thus</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Conversely</td>
+<td style="text-align: left;">First/Second/Third/…</td>
+<td style="text-align: left;">Finally</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-second" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-panel" style="flex-basis: 50.0%;justify-content: center;">
+<table class="table">
+<caption>(b) Introductory Phrase/Clause Transitions</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">During this period</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Despite this evolution in treatment</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">As a result of these conservative approaches</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Transitions are important for several reasons:</p>
+<ul>
+<li><p>They tell readers how to situate the information they are about to read relative to the information they’ve just read</p></li>
+<li><p>They break up the rhythm of sentences</p></li>
+<li><p>They don’t force your reader to infer continuity between sentences: the reader is doing enough work already and they might not follow your intended inferences.</p>
+<ul>
+<li><p>Consider the differences between transitions like “Furthermore” and “Conversely.” Furthermore tells your reader that you are continuing on with a similar theme – you are establishing that the upcoming sentence is supporting the concept introduced in your previous sentence(s). On the other hand, Conversely establishes a disjunction between the upcoming sentence and the previous sentence(s).</p></li>
+<li><p>If you do not tell the reader how the two sentences are related, they may infer the wrong relationship – particularly if they are unfamiliar with the topic!</p></li>
+</ul></li>
+</ul>
+<p>Transitions should occur either before the subject and verb or between the subject and verb – not after! Once the reader hits the verb, the transition is too late to assist him/her in making projections about the content of the sentence.</p>
+<p>Consider the following example:</p>
+<blockquote class="blockquote">
+<p>“As standard practice, many clinicians are upgrading conventional pacemakers to biventricular pacemakers in patients who subsequently develop heart failure. There are little clinical data to support this practice, however.”</p>
+</blockquote>
+<p>Notice that the transition, “however,” is contained at the end of the sentence (after the verb). Including the transition in this location is pointless because the reader has already inferred the relationship between the first and second sentence by the time they reach the transition. If they correctly inferred the relationship, then reading the word is a waste of time. On the other hand, if they incorrectly inferred the relationship, the transition will throw them off be-cause it will contrast the inferred relationship, making them go back and reread the passage (wasting even more time!).</p>
+<p>Instead, the sentence could be written:</p>
+<blockquote class="blockquote">
+<p>“As standard practice, many clinicians are upgrading conventional pacemakers to biventricular pacemakers in patients who subsequently develop heart failure. However, this practice has scant clinical data to support it.”</p>
+</blockquote>
+<p>Did you catch the expletive and passive sentence in the first version?</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Final Note on Continuity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Continuity always trumps clarity. If you need to use passive construction to maintain a strong sequence between sentences, use it!</p>
+</div>
+</div>
+</section>
+</section>
+<section id="the-three-cs-coherence-3" class="level1">
+<h1>The Three C’s: <em>Coherence</em> (#3)</h1>
+<dl>
+<dt>Coherence</dt>
+<dd>
+<p>the organizational structure of documents, sections of documents, and paragraphs</p>
+</dd>
+</dl>
+<p>In grade school, you probably learned that the first sentence of a paragraph is the “topic sentence” or some variation thereof. The same general principle is used in manuscript writing and it allows inference-building across sentences and primes the reader for what they’re about to read. Although it sounds a bit simple (and perhaps redundant), the best way to get a point across is to “tell the reader what you’re about to tell them, then tell them, then tell them what you just told them.”</p>
+<section id="paragraph-structure" class="level2">
+<h2 class="anchored" data-anchor-id="paragraph-structure">Paragraph Structure</h2>
+<p>Begin paragraphs with a set of comprehensive review sentences or a paragraph head. These paragraph heads should help the reader anticipate the full scope of the paragraph that follows. The paragraph head should be approximately 1-3 sentences that introduce the reader to the context, broad topic, and finally, the main point of your paragraph. This sentence (or group of sentences) shouldn’t occupy more than 1/3 of the length of the paragraph. In other words, if you’re writing a short para-graph, you shouldn’t need more than one sentence to introduce it. The paragraph head should be as specific as possible when looking ahead. If your paragraph delivers four causes of a condition, mention that you’re going to cover four causes in the paragraph head, rather than using “several” or “numerous.” In addition, the paragraph head should be slightly discontinuous with the body of the paragraph so that readers can perceive a break between the two sections. Lastly, the paragraph head should not introduce information that is included in subsequent paragraphs.</p>
+<p>Consider this example:</p>
+<blockquote class="blockquote">
+<p>As with the timing of functional deficits, the severity of speech, voice, and swallowing impairments can display extremely variability across patients. Small resections to oral cavity structures may result in minor speech deviations. Larger re-sections are likely to result in greater deviations. Likewise, laryngeal surgeries often result in some degree of dysphonia with the degree of vocal deficits often related to the amount of tissue removed and the success of any reconstruction. Even among patients experiencing total laryngectomy, postsurgical esophageal or artificial voice abilities may vary widely. Similar analogies are found in patients treated with radiation therapy. Greater mucosal and muscle changes result in a higher risk for more severe functional limitations. Increased severity of functional limitations is typically related to the need for an expanded rehabilitation effort. Any rehabilitation effort must consider the nature and extent of patient symptoms and the underlying contributors to those symptoms.</p>
+</blockquote>
+<p>The paragraph body should support the statement(s) made in the paragraph head and should never introduce a shift in topic or focus. Rather, if a shift in topic/focus is needed, begin a new paragraph that has its own paragraph head.</p>
+<p>In summary, all paragraphs should…</p>
+<ul>
+<li><p>Contain a paragraph head (between 1 and 3 sentences) that primes the reader for what they will read in the para-graph body</p></li>
+<li><p>Be at least 3 sentences long</p></li>
+<li><p>Contain a paragraph body (≥2 sentences) that supports the paragraph head</p></li>
+</ul>
+</section>
+<section id="manuscript-structure" class="level2">
+<h2 class="anchored" data-anchor-id="manuscript-structure">Manuscript Structure</h2>
+<p>The same organization (head &amp; body) used in paragraphs can be applied to entire sections of a manuscript or to the entire manuscript. For example, the introduction of a manuscript functions as a head for the entire article. Thus, the first paragraph should contain a preliminary thesis to inform readers immediately of the article’s focus.</p>
+<p>Likewise, the final paragraph of the introduction should end with the article’s primary focus/significance. Remember stress order: the very last sentence of the last paragraph should contain the article’s thesis sentence since this sentence will be what the reader remembers most. For a review manuscript, this sentence should precisely describe the purpose of the review and the topics that will be covered. The same general principle holds true for the final summary paragraph. Ostensibly, the summary will be the last thing read and will remain in memory the longest. Consequently, this section should clearly repeat (in general terms) the main points of the review that you would like the reader to remember.</p>
+</section>
+</section>
+<section id="simplifying-your-start-introductory-gambits-for-research-articles" class="level1">
+<h1>Simplifying Your Start: Introductory Gambits for Research Articles</h1>
+<p>Like chessmasters, experienced writers tend to rely on a series of opening gambits, similar to the opening moves in a chess match. <em>Writing gambits</em>, however, from the outset position an article’s importance and potential impact while simultaneously introducing readers to the subject matter. Often, these formulaic introductions can simply help writers introduce material swiftly and clearly, without getting lost in thickets of unnecessary definitions and complications prior to introducing their article’s central point. Because many opening gambits are also instantly recognizable to their readers, these gambits also serve the useful role of making the argument seem scientifically sound and easy to assimilate.</p>
+<p>In addition to easing the writing and reading processes, writing gambits can present intrinsic arguments for the importance of a research focus or its potential impact. Not surprisingly, even a casual glance through any discipline’s most highly-rated journals will reveal an abundance of writing gambits. Generally, the more rigorous the editing in a publication or in a type of article, the more likely its writers or editors will rely on writing gambits. For example, <em>Nature</em>’s “News and Views” articles and the journal’s weekly featured articles receive more rigorous editing than its “Letters to Nature” articles. The first two types of articles virtually always contain strong writing gambits; the latter seldom display any.</p>
+<p>Writing gambits can also act as centripetal forces that help organize your research. By opening with a gambit, you’ll obtain a clearer sense of focus on the central thrust of your proposal, article, or conference abstract. If you’re having trouble “jump starting” your research paper, or you are struggling with finding an approach that presents your research most convincingly, select a conventional opening gambit and see where it leads you. As in chess, where opening moves have become widely recognized conventions, the examples below highlight some of the more popular opening gambits in scientific articles:</p>
+<ul>
+<li><p>Introduction of <strong>new developments</strong> in detection, diagnosis, treatment of a condition;</p></li>
+<li><p>Mapping of <strong>causal relationships</strong> between two states previously considered unrelated;</p></li>
+<li><p>Pointing out the <strong>inverse relationship</strong> between the magnitude of a problem and current paucity of research shedding light on it;</p></li>
+<li><p>Highlighting the <strong>substantial costs</strong> (social, economic) of an existing condition versus the relative dearth of therapies available to address it;</p></li>
+<li><p>Demonstrating a <strong>relationship</strong> between an increase in the therapeutic interventions for a condition and continuing increases in mortalities resulting from the condition;</p></li>
+<li><p><strong>Contrasting</strong> the apparent simplicity of item or condition and its complex internal structure/function;</p></li>
+<li><p>Exploring the <strong>implications</strong> of a therapeutic approach with results that differed strongly from its anticipated out-comes;</p></li>
+<li><p>Discussion of the <strong>acknowledged importance</strong> of a phenomenon or condition and dearth of reliable methods available to study the condition.</p></li>
+</ul>
+<p>Notice that the most gambits rely on a contrast, usually a counter-intuitive contrast between two states. Some recent studies on language and cognition indicate that pairs of items that exist in contrast where we expect continuity disrupt our expectations, which are based on continuity, logic, and convention. When readers encounter items that violate their expectations—-particularly contrasting pairs—they both register and remember them best. Hence you’ll see the “however/although/despite” construction used strategically and frequently in introductory paragraphs.</p>
+<section id="examples-of-gambits" class="level3">
+<h3 class="anchored" data-anchor-id="examples-of-gambits">Examples of Gambits</h3>
+<p><strong>Editor’s Summary: Close companions</strong> <a href="https://www.nature.com/articles/nature06378">Nature 2007;450:845-8</a></p>
+<blockquote class="blockquote">
+<p>The extrasolar ‘hot Jupiter’ HD209458b is orbiting close to a solar-type star and is subject to intense heating as a result. It is surrounded by an expanded atmosphere of atomic hydrogen that is escaping from the planet. Such escape is theoretically possible at least inside an orbit of 0.1 AU (one AU is the distance between Earth and the Sun). But at 5 AU from the Sun, Jupiter has a stable atmosphere. So somewhere between those extremes there must be a crossover between stability and instability. Numerical modelling now suggests that crossover occurs between 0.14 and 0.16 AU for a Jupiter-like planet.</p>
+</blockquote>
+<p><strong>A stability limit for the atmospheres of giant extrasolar planets</strong> <a href="https://www.nature.com/articles/nature06378">Nature 2007;450:845-8</a></p>
+<blockquote class="blockquote">
+<p>Recent observations of the planet HD209458b indicate that it is surrounded by an expanded atmosphere of atomic hydrogen that is escaping hydrodynamically. Theoretically, it has been shown that such escape is possible at least inside an orbit of 0.1 AU and also that H3+ ions play a crucial role in cooling the upper atmosphere. Jupiter’s atmosphere is stable, so some-where between 5 and 0.1 AU there must be a crossover between stability and instability. Here we show that there is a sharp breakdown in atmospheric stability between 0.14 and 0.16 AU for a Jupiter-like planet orbiting a solar-type star. These results are in contrast to earlier modelling that implied much higher thermospheric temperatures and more significant evaporation farther from the star. (We use a three-dimensional, time-dependent coupled thermosphere–ionosphere model and properly include cooling by H3+ ions, allowing us to model globally the redistribution of heat and changes in molecular com-position.) Between 0.2 and 0.16 AU cooling by H3 1 ions balances heating by the star, but inside 0.16 AU molecular hydrogen dissociates thermally, suppressing the formation of H3+ and effectively shutting down that mode of cooling.</p>
+</blockquote>
+<p><strong>Editor’s Summary: Over the brainbow</strong> <a href="https://www.nature.com/articles/nature06293">Nature 2007;450:56-62</a></p>
+<blockquote class="blockquote">
+<p>More than a century ago, Ramo n Y Cajal’s use of Golgi staining on nerve cells opened the door to modern neurobiology: by staining a small number of neurons, previously invisible axons and dendrites could be seen as they coursed through sur-rounding tissue. But Golgi staining can label only a small number of cells in one colour. Now, a team from Harvard University has developed a method that enables many distinct cells within a brain circuit to be viewed at one time. The ‘Brainbow’ tech-nique can paint hundreds of individual neurons with distinctive hues, producing a detailed map of neuronal circuitry. This technology should not only boost mapping efforts in normal or diseased brains, but could also be applied to other complex cell populations, such as the immune system. The cover shows a portion of the hippocampus within a ‘Brainbow’ mouse. The multicoloured neurons of the dentate gyrus (bottom) lie beneath the cells of the arching CA1 region, while neurons of the cerebral cortex can be seen twinkling above.</p>
+</blockquote>
+<p><strong>Transgenic strategies for combinatorial expression of fluorescent proteins in the nervous system</strong> <a href="https://www.nature.com/articles/nature06293">Nature 2007;450:56-62</a></p>
+<blockquote class="blockquote">
+<p>Detailed analysis of neuronal network architecture requires the development of new methods. Here we present strategies to visualize synaptic circuits by genetically labelling neurons with multiple, distinct colours. In Brainbow transgenes, Cre/lox recombination is used to create a stochastic choice of expression between three or more fluorescent proteins (XFPs). Integration of tandem Brainbow copies in transgenic mice yielded combinatorial XFP expression, and thus many colours, thereby providing a way to distinguish adjacent neurons and visualize other cellular interactions. As a demonstration, we reconstructed hundreds of neighbouring axons and multiple synaptic contacts in one small volume of a cerebellar lobe exhibiting approximately 90 colours. The expression in some lines also allowed us tomap glial territories and follow glial cells and neurons over time <em>in vivo</em>. The ability of the Brainbow system to label uniquely many individual cells within a population may facilitate the analysis of neuronal circuitry on a large scale.</p>
+</blockquote>
+<p><strong>Fire as the dominant driver of central Canadian boreal forest carbon balance</strong> <a href="https://www.nature.com/articles/nature06272">Nature 2007;450:89-92</a></p>
+<blockquote class="blockquote">
+<p>Changes in climate, atmospheric carbon dioxide concentration and fire regimes have been occurring for decades in the global boreal forest, with future climate change likely to increase fire frequency—the primary disturbance agent in most boreal forests. Previous attempts to assess quantitatively the effect of changing environmental conditions on the net boreal forest carbon balance have not taken into account the competition between different vegetation types on a large scale. Here we use a process model with three competing vascular and non-vascular vegetation types to examine the effects of climate, carbon dioxide concentrations and fire disturbance on net biome production, net primary production and vegetation dominance in 100 Mha of Canadian boreal forest. We find that the carbon balance of this region was driven by changes in fire disturbance from 1948 to 2005. Climate changes affected the variability, but not the mean, of the landscape carbon balance, with precipitation exerting a more significant effect than temperature. We show that more frequent and larger fires in the late twentieth century resulted in deciduous trees and mosses increasing production at the expense of coniferous trees. Our model did not however exhibit the increases in total forest net primary production that have been inferred from satellite data. We find that poor soil drainage decreased the variability of the landscape carbon balance, which suggests that increased climate and hydrological changes have the potential to affect disproportionately the carbon dynamics of these areas. Overall, we conclude that direct ecophysiological changes resulting from global climate change have not yet been felt in this large boreal region. Variations in the landscape carbon balance and vegetation dominance have so far been driven largely by increases in fire frequency.</p>
+</blockquote>
+<p><strong>The opening pore confirmation of potassium channels</strong> <a href="https://www.nature.com/articles/417523a">Nature 2002;417(6888):523-6</a></p>
+<blockquote class="blockquote">
+<p>Potassium and other ion channels are allosteric proteins that switch between closed and open conformation in response to an external stimulus in a process known as gating. Depending on the channel type, the gating stimulus can be binding of a ligand, the member electric field, or both. A central issue in ion channel biophysics concerns the nature of the pore conformational changes that accompany channel gating. What do the open and closed structures of the pore look like? In general, little is known about protein conformational changes in membrane proteins, and yet for ion channels these changes are crucial to every aspect of their function; ion conduction, gating and pharmacology.</p>
+</blockquote>
+<p><strong>The jet set</strong> <a href="https://www.nature.com/articles/417125a">Nature 2002;417:125</a></p>
+<blockquote class="blockquote">
+<p>Although a wide variety of astrophysical objects produce powerful jets, we still lack a comprehensive theory of their formation.</p>
+</blockquote>
+<p><strong>Inherit the wheeze</strong> <a href="https://www.nature.com/articles/418383a">Nature 2002;418:383-4</a></p>
+<blockquote class="blockquote">
+<p>Asthma—a condition that afflicts hundreds of millions or people world-wide—has been recognized by physicians and lay people for more than two millennia. One would think after all this time, and with so many affected people, we would under-stand the root cause of the disease. We don’t; but we do know a little.</p>
+</blockquote>
+<p><strong>Functions of FGF signaling from the apical ectodermal ridge in limb development</strong> <a href="https://www.nature.com/articles/nature00902">Nature 2002;418(6897):501-8</a></p>
+<blockquote class="blockquote">
+<p>A fundamental question in developmental biology is how structures of various sizes and shapes are formed. The vertebrate limb has long been considered and excellent model system for addressing this question. The challenge has been to under-stand how a simple embryonic bud, containing morphologically homogeneous mesenchymal cells and a covering epithelium, develops into an organ that contains numerous elements in diverse forms.</p>
+</blockquote>
+<p><strong>Long-term relation between breastfeeding and development of atopy and asthma in children and young adults: a longitudinal study</strong> <a href="https://linkinghub.elsevier.com/retrieve/pii/S0140-6736(02)11025-7">Lancet 2002;360(9337):901-7</a></p>
+<blockquote class="blockquote">
+<p>Most reviews of risk factors for asthma recommend extended breastfeeding to reduce the probability of development of atopy and asthma in children. Although such a view is widely accepted and promoted, few investigators have adequately addressed the issue, and their results are conflicting.</p>
+</blockquote>
+<p><strong>The Coronary Slow Flow Phenomenon - A New Coronary Microvascular Disorder</strong> <a href="https://www.karger.com/Article/FullText/63121">Cardiology 2002;97(4):197-202</a></p>
+<blockquote class="blockquote">
+<p>The coronary slow flow phenomenon is an angiographic observation characterized by aniographically normal or near-normal coronary arteries with delayed opacification of the distal vasculature. Although myocardial biopsy studies have demonstrated the presence of coronary microvascular disease in some patients exhibiting coronary slow flow, the phenomenon have not been investigated. Thus it currently remains uncertain whether most cases of coronary slow flow represent an angiographic manifestation of a pathological process affecting the coronary circulation, or whether it is essentially devoid of clinical implications.</p>
+</blockquote>
+<p><strong>Risk of Respiratory Complications and Wound Infection in Patients Undergoing Ambulatory Surgery</strong> <a href="https://pubs.asahq.org/anesthesiology/article/97/4/842/40507/Risk-of-Respiratory-Complications-and-Wound">Anesthesiology 2002 Oct;97(4):842-7</a></p>
+<blockquote class="blockquote">
+<p>Smoking is a major health risk, with just under 12% of all deaths in developed countries attributed to tobacco. It is also generally accepted that smoking increases the risk of complications in patients undergoing anesthesia and surgery. Despite this, it is our experience, and that of others, that recommendations to stop smoking before elective surgery are rarely heeded. Most previous studies of perioperative risk associated with smoking were based on self-reporting and did not control for additional risk factors. Also, they may not represent current surgical and anesthetic practice. For example, there has been a marked increase in the proportion of surgery performed on an ambulatory (day-stay) basis, and these important groups have not been previously studied. We therefore studied a broad range of patients undergoing ambulatory surgery and con-firmed their smoking status with end-expired carbon monoxide analysis.</p>
+</blockquote>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

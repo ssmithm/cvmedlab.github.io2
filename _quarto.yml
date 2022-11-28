@@ -1,0 +1,48 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "CV med Lab"
+  site-url: https://www.cvmedlab.org/
+  #google-analytics: UA-163403898-2
+  navbar:
+    title: "{CVmedLab}"
+    left:
+      - text: "about"
+        href: about.qmd
+      - text: "people"
+        href: people.qmd
+      - text: "research"
+        href: research.qmd
+      - text: "papers"
+        href: papers.qmd
+      - text: "tools"
+        href: https://github.com/ssmithm?tab=repositories
+      - text: "lab docs"
+        menu:
+          - text: "Table 1 {R}"
+            href: labdocs/table1_gtsummary.qmd
+          - text: "Cumulative Incidence Curves {R}"
+            href: labdocs/cumulative_incidence.qmd
+          - text: "Scientific Writing" 
+            href: labdocs/writing.qmd
+
+    right:
+      - icon: github
+        href: https://github.com/ssmithm
+      - icon: twitter
+        href: https://twitter.com/SteveSmithUF
+      - icon: linkedin
+        href: https://www.linkedin.com/in/steven-smith-09b80659/
+      - icon: researchgate
+        href: https://www.researchgate.net/profile/Steven_Smith16/
+
+  #page-footer: "Copyright 2022, Steven M. Smith" 
+  
+format:
+  html:
+    theme: [default, custom.scss] 
+
+editor: visual
+

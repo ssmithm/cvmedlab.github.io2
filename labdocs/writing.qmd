@@ -1,0 +1,436 @@
+---
+title: "Manuscript Writing"
+author: Steven M. Smith
+format: html
+---
+
+Whether writing for medical journals, patient notes, or any other professional reason, you should strive to effectively and efficiently communicate your ideas to the reader. Developing good writing skills requires effort, patience, and practice, but can dramatically improve the amount of information that a reader takes away. Moreover, in the professional realm, inefficient communication skills can lead others to infer that you are less competent as a professional.
+
+Consider the following examples:
+
+> "All patients were followed every 6 weeks for the first 6 months, and every 6 months thereafter until 2 years after the last patient was enrolled."
+
+Why were they following the patients around?
+
+> "Among the participants, 46% of the women and 37% of the men were black at the beginning of the study."
+
+What were they at the end of the study?
+
+And, these quotes, verbatim from real hospital charts:
+
+> "Patient has chest pain if she lies on her left side for over a year."
+>
+> "On the second day the knee was better, and on the third day it disappeared."
+>
+> "The patient is tearful and crying constantly. She also appears to be depressed."
+>
+> "The patient has been depressed since she began seeing me in 1993."
+>
+> "The patient refused autopsy."
+>
+> "The patient has no previous history of suicides."
+>
+> "Patient has left white blood cells at another hospital."
+>
+> "The skin was moist and dry."
+>
+> "Large brown stool ambulating in the hall."
+>
+> "She has no rigors or shaking chills, but her husband states she was very hot in bed last night."
+>
+> "While in ER, she was examined, x-rated and sent home."
+>
+> "The pelvic exam will be done later on the floor."
+>
+> "Patient was seen in consultation by Dr. X, who felt we should sit on the abdomen and I agree."
+>
+> "Discharge status: Alive but without my permission."
+>
+> "Had to go back to hospital cause he blew up."
+
+Although you can probably guess what most of these examples were trying to communicate, they fall short of effectively conveying the intended message. Hopefully, the following information is useful in developing your scientific manuscripts, and I encourage you to continue practicing these skills throughout your professional career.
+
+# The Three C's: *Clarity* (#1)
+
+## Active vs. Passive Construction
+
+Readers rely on deeply-embedded syntactic preferences. For the English language, the conventional syntax that readers expect is a sentence following a subject-verb-object order. Consequently, atypical syntax will slow a reader down, increase the amount of deciphering the brain must perform, and reduce the amount of information retained. However, even with conventional subject-verb-object order, a long and complex sentence can slow down reading and increase brain activity.
+
+Active construction is easier to read than passive construction. With active construction, the main actor of the sentence is the grammatical subject, followed by an action verb, then the result or object.
+
+::: callout-tip
+## Passive Construction
+
+*"A decision was made by the committee to proceed."*
+
+-   Longer
+-   More indirect
+-   Less clear
+-   Less memorable\
+-   More difficult for readers to process
+-   Confounds the readers expectation about sentence structure
+-   Inverts the chronological order
+:::
+
+::: callout-tip
+## Active Construction
+
+*"The committee made a decision to proceed."*
+
+-   Shorter
+-   More efficient
+-   More direct
+-   More memorable
+-   Easier for readers to process
+-   Replicates the chronological order of events
+-   Conforms to reader expectations about sentence structure
+:::
+
+The quick litmus test for determining if your sentence is active vs. passive is to ask yourself "Who's doing the <verb> here?"
+
+::: {.callout-caution collapse="true"}
+## Example
+
+"Additional funding can be identified through reductions in other government spending, increased Medicare taxes and in continuous improvement of care delivery processes."
+
+Ask yourself: Who's doing the **identifying** here? The answer is you! The sentence is essentially saying "You can identify additional funding through ...." However, the grammatical subject of the sentence is actually "Additional funding." So, if the answer to your litmus test question isn't the grammatical subject of the sentence, then the sentence is passive.
+
+Now, consider the sentence rewritten in this way: "Congress could free up additional funding by reducing other government spending, increasing Medicare taxes and promoting continuous improvement of care delivery processes." Who is doing the **freeing up** of additional funds here? Congress is, and congress is the grammatical subject; thus, this sentence is constructed actively.
+:::
+
+Be careful not to assume that a passive verb will necessarily make the sentence passive. Passive construction and passive verbs aren't the same thing. You can have active construction with a passive verb, but you cannot have passive construction with an active verb.
+
+For example:
+
+> "Researchers were uncertain about the significance of these unanticipated results."
+
+Passive verb, active sentence. (Who was uncertain?)
+
+> "In the studies used, some variability was discovered in the choice and definition of fatal outcomes."
+
+Passive verb, passive sentence. (Who is doing the discovering?)
+
+Passive verbs are OK, but you should make your verbs portray action whenever possible. When you use active verbs, you can avoid adding in unnecessary adverbs and prepositions, which should improve the efficiency of your writing.
+
+::: callout-note
+## Passive verbs
+
+Some commonly used passive verbs include: **is**, **was**, **were**, **have**, **has**, **has been**, and **appeared**
+:::
+
+## Avoid Expletives
+
+Expletives ("there is/there are") invert the order of the sentence (S-V-O) that the reader is expecting. Moreover, expletives place a meaningless adverb where readers expect the subject.
+
+For example,
+
+> *"*There was some variability among studies in their choice and definition of fatal outcomes."
+
+What is the grammatical subject of the sentence? Where does it fit in the sentence with regard to order? The sentence could be rewritten as "In the studies used, some variability existed in the choice and definition of fatal outcomes." Although this version adds one word to the length, it uses the conventional S-V-O syntax, making it easier to comprehend on the first read-through.
+
+## Avoid Nominalizations
+
+Nominalizations are verbs turned into nouns. They often end in suffixes like --iate or --tion or they may begin with prefixes like pre-, de-, un-, in-, or re-. Nominalizations tend to be abstract and forgettable. Moreover, they rob your verb of action and lend themselves to passive sentences.
+
+::: callout-caution
+## Examples of Nominalizations
+
+-   Transformation = transform
+
+-   Identification = identify
+
+-   Utilization = use (this one is used all the time in our world!)
+
+-   Termination = end or fire
+:::
+
+Consider the following example:
+
+> "Consolidation of the data was arranged by a coordinating center"
+
+versus:
+
+> "A coordinating center consolidated the data."
+
+Can you spot the nominalization? Which sentence reads better?
+
+## Avoid Abstractions
+
+Always try to use actors or tangible objects as your grammatical subjects rather than abstractions. Actors make sentences more concrete and easier to remember. Furthermore, actors lend themselves to active sentences and verbs.
+
+Consider the following example:
+
+> "Completion of this process by the nurse will allow him to have greater success and stability in the new role."
+
+What is the grammatical subject of this sentence? Consider this re-write: "Once the nurse completes this process, he'll be more successful and more stable in his new role." Which sentence is easier to read? Also, notice the length of each sentence. Abstractions make sentences longer.
+
+Compare the following sentences:
+
+> "The short longevity of most common restorations and especially those of resin-based composite materials calls for detailed studies of factors which may lead to an extension of the lifetime of restorations."
+
+> "Resin-based composite materials have relatively short longevity."
+
+::: callout-tip
+## Examples of Actors
+
+-   We/I/they/he
+
+-   The partners
+
+-   The recent study
+
+-   The state of Florida
+
+-   The business plan
+:::
+
+## Avoid Isolated Pronouns
+
+Choose strong subjects by avoiding isolated pronouns like this, that, these, those, or it as subjects of your sentences. These pronouns introduce ambiguity to your sentence and will force your reader to backtrack in a sentence to verify their meaning.
+
+For example:
+
+> "This resulted in the entire department performing better than quarterly earnings forecasts."
+
+What resulted in the department performing better? We don't know without going back to the sentence before. An easy bandaid fix is simply specifying the subject: "This strategy resulted in ...."
+
+> "Despite this connection, psychosocial stressors remain under-recognized as a risk factor for heart disease compared to more traditional factors such as diabetes, hyperlipidemia, and tobacco use. Previously, this may have been due to a poor understanding of the pathophysiologic mechanisms behind this mind-heart interaction."
+
+Can you spot the isolated pro-noun? What is the isolated pronoun referring to?
+
+## Place Subjects Close to the Beginning of a Sentence
+
+Readers will unconsciously search for the subject of the sentence, then for the verb, before they are able to absorb other content. Consequently, readers will perceive your sentences as difficult to read and recall when you place too much information at the beginning of your sentence or between the subject and verb.
+
+Consider the following sentences. Which sentence is easier to follow?
+
+> "A protocol specifying the baseline, follow-up, and outcome data to be collected, and the methods of analysis, was developed and given written approval by all study groups by August, 2005."
+
+> "By August 2005, all study groups had created and approved a protocol, specifying the baseline, follow-up, and outcome da-ta to be collected, as well as methods of analysis."
+
+# The Three C's: *Continuity* (#2)
+
+When we talk about how a sentence "flows," we really mean that the sentence seems logically or linguistically related to the sentences around it. We also mean that the contents of that sentence refer to the sentences surrounding it. Lastly, we mean that the rhythm of the sentence is somewhat varied from the sentences before and after it. Interestingly, research suggests that if every sentence sounds exactly the same, readers will subconsciously attribute a lower intelligence level to the writer.
+
+Readers will find paragraphs cohesive and continuous when they encounter:
+
+-   Important information in the stressed position
+
+-   Sentences that display careful sequencing
+
+-   Transitions introducing every 2-3 sentences
+
+-   Use of consistent words/themes in the paragraph (related to sequencing).
+
+## Stress Position
+
+The stress position of any sentence is the end of the sentence. This concept is true for both written and spoken language. When we speak, as we near the end of a sentence, our voices ordinarily rise in pitch on the last few words to stress the ending more strongly than the beginning or middle. As a result, items named in the ends of sentences, paragraphs, and documents receive more stress than items at the beginnings and middles. Readers find the greatest impact in the information at the end and will subsequently retain the information the longest.
+
+The order of impact is as follows: End \> Beginning \> Middle.
+
+Interestingly, good writers will put less than stellar information or results (or limitations) in the beginning or middle of a sentence or paragraph in order to minimize the impact of such information.
+
+To maximize the impact of the stress position(s), you should avoid sentences that are too lengthy. Long sentences:
+
+-   Provide few opportunities for emphasis to spotlight important items for readers to remember/focus on
+
+-   Can cause readers to lose track of the main actor/action in the sentence and lose track of relationships between items, phrases, or clauses
+
+-   Can deprive writers of opportunities for introducing readers to new information via carefully designed sequences that place new information in the stress positions of sentences, followed by sentences that use as their subjects/topics the contents of the previous sentences' stress
+
+For example:
+
+> "The aims of this study are therefore three fold. First, we will quantify the effect of multi-drug use on the functional status of the frail elderly; second, we will determine the relationship between multi-drug use and health of the frail elderly; and third, we will define the impact of multi-drug use on the QOL of the frail elderly."
+
+Compare the above with this group of sentences:
+
+> "Therefore, this study has three aims. First, we will quantify the effect of multi-drug use on the functional status of the frail elderly. Second, we will determine the relationship between multi-drug use and health of the frail elderly. And, finally, we will define the impact of multi-drug use on the QOL of the frail elderly."
+
+## Sequencing
+
+Readers will absorb easily even the most complex and unfamiliar information if you sequence your sentences carefully. You should always place already-introduced information at the outset of your sentences. This can be done in two ways:
+
+1.  **Make the grammatical subject in the sentence refer to item(s) in the stress position of the previous sentence.** This word need not necessarily match exactly a word in the previous sentences' stress.
+
+    For example:
+
+    > "Despite the availability of effective pharmacological and psychotherapeutic treatments, a recent community survey found that only 16% of those with panic disorder were receiving appropriate medical management . In part, this problem is a natural consequence of the phenomenology of panic disorder and panic attacks. Panic attacks are experienced as the sudden and unexplained feeling of terror that is accompanied by severe and frightening physical symptoms such as chest pain, difficulty breathing, and heart palpitations."
+
+    Versus:
+
+    > "Despite the availability of effective pharmacological and psychotherapeutic treatments, a recent community survey found that **only 16% of those with panic disorder were receiving appropriate medical management**. **In part, this problem** is a natural consequence of the phenomenology of panic disorder and **panic attacks**. **Panic attacks** are experienced as the sudden and unexplained feeling of terror that is accompanied by severe and frightening physical symptoms such as chest pain, difficulty breathing, and heart palpitations."
+
+    Notice the bolded sections. The second sentence refers back to the problem highlighted in the stress position of the first sentence. In this case, the subject of sentence #2 does not repeat verbatim the stress of sentence #1. In contrast, the third sentence uses sentence #2's stress position as its grammatical subject.
+
+2.  **Make the grammatical subject refer back to the subject of the preceding sentence.**
+
+    For example:
+
+    > "Although most of these **screening tools** have demonstrated good overall psychometric properties, **they** are quite variable in their ability to accurately detect panic disorder. For example, **PRIME-MD**, one of the most widely used psy-chiatric screening instruments, has been reported to identify 83% of general medical patients with"any" psychiatric disorder, but only 57% of those with panic disorder. **Only a few screening tools** have been designed specifically to detect panic."
+
+    Notice the continuity between the sentences: each sentence's grammatical subject is closely related (or verbatim) to the previous sentence.
+
+## Use Transitions Liberally
+
+Transitions allow you to position the information your readers are about to encounter relative to what they have already encountered. Transitions should be used frequently (i.e. every 2-3 sentences if appropriate).
+
+::: {#tbl-panel layout-ncol="2"}
+|            |                        |                |
+|------------|------------------------|----------------|
+| Also       | Nevertheless           | Consequently   |
+| However    | Because                | Subsequently   |
+| Although   | Unfortunately          | Therefore/Thus |
+| Conversely | First/Second/Third/... | Finally        |
+
+: Single-Word Transitions {#tbl-first}
+
+|                                              |
+|----------------------------------------------|
+| During this period                           |
+| Despite this evolution in treatment          |
+| As a result of these conservative approaches |
+
+: Introductory Phrase/Clause Transitions {#tbl-second}
+
+Transition Words & Phrases
+:::
+
+Transitions are important for several reasons:
+
+-   They tell readers how to situate the information they are about to read relative to the information they've just read
+
+-   They break up the rhythm of sentences
+
+-   They don't force your reader to infer continuity between sentences: the reader is doing enough work already and they might not follow your intended inferences.
+
+    -   Consider the differences between transitions like "Furthermore" and "Conversely." Furthermore tells your reader that you are continuing on with a similar theme -- you are establishing that the upcoming sentence is supporting the concept introduced in your previous sentence(s). On the other hand, Conversely establishes a disjunction between the upcoming sentence and the previous sentence(s).
+
+    -   If you do not tell the reader how the two sentences are related, they may infer the wrong relationship -- particularly if they are unfamiliar with the topic!
+
+Transitions should occur either before the subject and verb or between the subject and verb -- not after! Once the reader hits the verb, the transition is too late to assist him/her in making projections about the content of the sentence.
+
+Consider the following example:
+
+> "As standard practice, many clinicians are upgrading conventional pacemakers to biventricular pacemakers in patients who subsequently develop heart failure. There are little clinical data to support this practice, however."
+
+Notice that the transition, "however," is contained at the end of the sentence (after the verb). Including the transition in this location is pointless because the reader has already inferred the relationship between the first and second sentence by the time they reach the transition. If they correctly inferred the relationship, then reading the word is a waste of time. On the other hand, if they incorrectly inferred the relationship, the transition will throw them off be-cause it will contrast the inferred relationship, making them go back and reread the passage (wasting even more time!).
+
+Instead, the sentence could be written:
+
+> "As standard practice, many clinicians are upgrading conventional pacemakers to biventricular pacemakers in patients who subsequently develop heart failure. However, this practice has scant clinical data to support it."
+
+Did you catch the expletive and passive sentence in the first version?
+
+::: callout-tip
+## Final Note on Continuity
+
+Continuity always trumps clarity. If you need to use passive construction to maintain a strong sequence between sentences, use it!
+:::
+
+# The Three C's: *Coherence* (#3)
+
+Coherence
+
+:   the organizational structure of documents, sections of documents, and paragraphs
+
+In grade school, you probably learned that the first sentence of a paragraph is the "topic sentence" or some variation thereof. The same general principle is used in manuscript writing and it allows inference-building across sentences and primes the reader for what they're about to read. Although it sounds a bit simple (and perhaps redundant), the best way to get a point across is to "tell the reader what you're about to tell them, then tell them, then tell them what you just told them."
+
+## Paragraph Structure
+
+Begin paragraphs with a set of comprehensive review sentences or a paragraph head. These paragraph heads should help the reader anticipate the full scope of the paragraph that follows. The paragraph head should be approximately 1-3 sentences that introduce the reader to the context, broad topic, and finally, the main point of your paragraph. This sentence (or group of sentences) shouldn't occupy more than 1/3 of the length of the paragraph. In other words, if you're writing a short para-graph, you shouldn't need more than one sentence to introduce it. The paragraph head should be as specific as possible when looking ahead. If your paragraph delivers four causes of a condition, mention that you're going to cover four causes in the paragraph head, rather than using "several" or "numerous." In addition, the paragraph head should be slightly discontinuous with the body of the paragraph so that readers can perceive a break between the two sections. Lastly, the paragraph head should not introduce information that is included in subsequent paragraphs.
+
+Consider this example:
+
+> As with the timing of functional deficits, the severity of speech, voice, and swallowing impairments can display extremely variability across patients. Small resections to oral cavity structures may result in minor speech deviations. Larger re-sections are likely to result in greater deviations. Likewise, laryngeal surgeries often result in some degree of dysphonia with the degree of vocal deficits often related to the amount of tissue removed and the success of any reconstruction. Even among patients experiencing total laryngectomy, postsurgical esophageal or artificial voice abilities may vary widely. Similar analogies are found in patients treated with radiation therapy. Greater mucosal and muscle changes result in a higher risk for more severe functional limitations. Increased severity of functional limitations is typically related to the need for an expanded rehabilitation effort. Any rehabilitation effort must consider the nature and extent of patient symptoms and the underlying contributors to those symptoms.
+
+The paragraph body should support the statement(s) made in the paragraph head and should never introduce a shift in topic or focus. Rather, if a shift in topic/focus is needed, begin a new paragraph that has its own paragraph head.
+
+In summary, all paragraphs should...
+
+-   Contain a paragraph head (between 1 and 3 sentences) that primes the reader for what they will read in the para-graph body
+
+-   Be at least 3 sentences long
+
+-   Contain a paragraph body (≥2 sentences) that supports the paragraph head
+
+## Manuscript Structure
+
+The same organization (head & body) used in paragraphs can be applied to entire sections of a manuscript or to the entire manuscript. For example, the introduction of a manuscript functions as a head for the entire article. Thus, the first paragraph should contain a preliminary thesis to inform readers immediately of the article's focus.
+
+Likewise, the final paragraph of the introduction should end with the article's primary focus/significance. Remember stress order: the very last sentence of the last paragraph should contain the article's thesis sentence since this sentence will be what the reader remembers most. For a review manuscript, this sentence should precisely describe the purpose of the review and the topics that will be covered. The same general principle holds true for the final summary paragraph. Ostensibly, the summary will be the last thing read and will remain in memory the longest. Consequently, this section should clearly repeat (in general terms) the main points of the review that you would like the reader to remember.
+
+# Simplifying Your Start: Introductory Gambits for Research Articles
+
+Like chessmasters, experienced writers tend to rely on a series of opening gambits, similar to the opening moves in a chess match. *Writing gambits*, however, from the outset position an article's importance and potential impact while simultaneously introducing readers to the subject matter. Often, these formulaic introductions can simply help writers introduce material swiftly and clearly, without getting lost in thickets of unnecessary definitions and complications prior to introducing their article's central point. Because many opening gambits are also instantly recognizable to their readers, these gambits also serve the useful role of making the argument seem scientifically sound and easy to assimilate.
+
+In addition to easing the writing and reading processes, writing gambits can present intrinsic arguments for the importance of a research focus or its potential impact. Not surprisingly, even a casual glance through any discipline's most highly-rated journals will reveal an abundance of writing gambits. Generally, the more rigorous the editing in a publication or in a type of article, the more likely its writers or editors will rely on writing gambits. For example, *Nature*'s "News and Views" articles and the journal's weekly featured articles receive more rigorous editing than its "Letters to Nature" articles. The first two types of articles virtually always contain strong writing gambits; the latter seldom display any.
+
+Writing gambits can also act as centripetal forces that help organize your research. By opening with a gambit, you'll obtain a clearer sense of focus on the central thrust of your proposal, article, or conference abstract. If you're having trouble "jump starting" your research paper, or you are struggling with finding an approach that presents your research most convincingly, select a conventional opening gambit and see where it leads you. As in chess, where opening moves have become widely recognized conventions, the examples below highlight some of the more popular opening gambits in scientific articles:
+
+-   Introduction of **new developments** in detection, diagnosis, treatment of a condition;
+
+-   Mapping of **causal relationships** between two states previously considered unrelated;
+
+-   Pointing out the **inverse relationship** between the magnitude of a problem and current paucity of research shedding light on it;
+
+-   Highlighting the **substantial costs** (social, economic) of an existing condition versus the relative dearth of therapies available to address it;
+
+-   Demonstrating a **relationship** between an increase in the therapeutic interventions for a condition and continuing increases in mortalities resulting from the condition;
+
+-   **Contrasting** the apparent simplicity of item or condition and its complex internal structure/function;
+
+-   Exploring the **implications** of a therapeutic approach with results that differed strongly from its anticipated out-comes;
+
+-   Discussion of the **acknowledged importance** of a phenomenon or condition and dearth of reliable methods available to study the condition.
+
+Notice that the most gambits rely on a contrast, usually a counter-intuitive contrast between two states. Some recent studies on language and cognition indicate that pairs of items that exist in contrast where we expect continuity disrupt our expectations, which are based on continuity, logic, and convention. When readers encounter items that violate their expectations----particularly contrasting pairs---they both register and remember them best. Hence you'll see the "however/although/despite" construction used strategically and frequently in introductory paragraphs.
+
+### Examples of Gambits
+
+**Editor's Summary: Close companions** [Nature 2007;450:845-8](https://www.nature.com/articles/nature06378)
+
+> The extrasolar 'hot Jupiter' HD209458b is orbiting close to a solar-type star and is subject to intense heating as a result. It is surrounded by an expanded atmosphere of atomic hydrogen that is escaping from the planet. Such escape is theoretically possible at least inside an orbit of 0.1 AU (one AU is the distance between Earth and the Sun). But at 5 AU from the Sun, Jupiter has a stable atmosphere. So somewhere between those extremes there must be a crossover between stability and instability. Numerical modelling now suggests that crossover occurs between 0.14 and 0.16 AU for a Jupiter-like planet.
+
+**A stability limit for the atmospheres of giant extrasolar planets** [Nature 2007;450:845-8](https://www.nature.com/articles/nature06378)
+
+> Recent observations of the planet HD209458b indicate that it is surrounded by an expanded atmosphere of atomic hydrogen that is escaping hydrodynamically. Theoretically, it has been shown that such escape is possible at least inside an orbit of 0.1 AU and also that H3+ ions play a crucial role in cooling the upper atmosphere. Jupiter's atmosphere is stable, so some-where between 5 and 0.1 AU there must be a crossover between stability and instability. Here we show that there is a sharp breakdown in atmospheric stability between 0.14 and 0.16 AU for a Jupiter-like planet orbiting a solar-type star. These results are in contrast to earlier modelling that implied much higher thermospheric temperatures and more significant evaporation farther from the star. (We use a three-dimensional, time-dependent coupled thermosphere--ionosphere model and properly include cooling by H3+ ions, allowing us to model globally the redistribution of heat and changes in molecular com-position.) Between 0.2 and 0.16 AU cooling by H3 1 ions balances heating by the star, but inside 0.16 AU molecular hydrogen dissociates thermally, suppressing the formation of H3+ and effectively shutting down that mode of cooling.
+
+**Editor's Summary: Over the brainbow** [Nature 2007;450:56-62](https://www.nature.com/articles/nature06293)
+
+> More than a century ago, Ramo n Y Cajal's use of Golgi staining on nerve cells opened the door to modern neurobiology: by staining a small number of neurons, previously invisible axons and dendrites could be seen as they coursed through sur-rounding tissue. But Golgi staining can label only a small number of cells in one colour. Now, a team from Harvard University has developed a method that enables many distinct cells within a brain circuit to be viewed at one time. The 'Brainbow' tech-nique can paint hundreds of individual neurons with distinctive hues, producing a detailed map of neuronal circuitry. This technology should not only boost mapping efforts in normal or diseased brains, but could also be applied to other complex cell populations, such as the immune system. The cover shows a portion of the hippocampus within a 'Brainbow' mouse. The multicoloured neurons of the dentate gyrus (bottom) lie beneath the cells of the arching CA1 region, while neurons of the cerebral cortex can be seen twinkling above.
+
+**Transgenic strategies for combinatorial expression of fluorescent proteins in the nervous system** [Nature 2007;450:56-62](https://www.nature.com/articles/nature06293)
+
+> Detailed analysis of neuronal network architecture requires the development of new methods. Here we present strategies to visualize synaptic circuits by genetically labelling neurons with multiple, distinct colours. In Brainbow transgenes, Cre/lox recombination is used to create a stochastic choice of expression between three or more fluorescent proteins (XFPs). Integration of tandem Brainbow copies in transgenic mice yielded combinatorial XFP expression, and thus many colours, thereby providing a way to distinguish adjacent neurons and visualize other cellular interactions. As a demonstration, we reconstructed hundreds of neighbouring axons and multiple synaptic contacts in one small volume of a cerebellar lobe exhibiting approximately 90 colours. The expression in some lines also allowed us tomap glial territories and follow glial cells and neurons over time *in vivo*. The ability of the Brainbow system to label uniquely many individual cells within a population may facilitate the analysis of neuronal circuitry on a large scale.
+
+**Fire as the dominant driver of central Canadian boreal forest carbon balance** [Nature 2007;450:89-92](https://www.nature.com/articles/nature06272)
+
+> Changes in climate, atmospheric carbon dioxide concentration and fire regimes have been occurring for decades in the global boreal forest, with future climate change likely to increase fire frequency---the primary disturbance agent in most boreal forests. Previous attempts to assess quantitatively the effect of changing environmental conditions on the net boreal forest carbon balance have not taken into account the competition between different vegetation types on a large scale. Here we use a process model with three competing vascular and non-vascular vegetation types to examine the effects of climate, carbon dioxide concentrations and fire disturbance on net biome production, net primary production and vegetation dominance in 100 Mha of Canadian boreal forest. We find that the carbon balance of this region was driven by changes in fire disturbance from 1948 to 2005. Climate changes affected the variability, but not the mean, of the landscape carbon balance, with precipitation exerting a more significant effect than temperature. We show that more frequent and larger fires in the late twentieth century resulted in deciduous trees and mosses increasing production at the expense of coniferous trees. Our model did not however exhibit the increases in total forest net primary production that have been inferred from satellite data. We find that poor soil drainage decreased the variability of the landscape carbon balance, which suggests that increased climate and hydrological changes have the potential to affect disproportionately the carbon dynamics of these areas. Overall, we conclude that direct ecophysiological changes resulting from global climate change have not yet been felt in this large boreal region. Variations in the landscape carbon balance and vegetation dominance have so far been driven largely by increases in fire frequency.
+
+**The opening pore confirmation of potassium channels** [Nature 2002;417(6888):523-6](https://www.nature.com/articles/417523a)
+
+> Potassium and other ion channels are allosteric proteins that switch between closed and open conformation in response to an external stimulus in a process known as gating. Depending on the channel type, the gating stimulus can be binding of a ligand, the member electric field, or both. A central issue in ion channel biophysics concerns the nature of the pore conformational changes that accompany channel gating. What do the open and closed structures of the pore look like? In general, little is known about protein conformational changes in membrane proteins, and yet for ion channels these changes are crucial to every aspect of their function; ion conduction, gating and pharmacology.
+
+**The jet set** [Nature 2002;417:125](https://www.nature.com/articles/417125a)
+
+> Although a wide variety of astrophysical objects produce powerful jets, we still lack a comprehensive theory of their formation.
+
+**Inherit the wheeze** [Nature 2002;418:383-4](https://www.nature.com/articles/418383a)
+
+> Asthma---a condition that afflicts hundreds of millions or people world-wide---has been recognized by physicians and lay people for more than two millennia. One would think after all this time, and with so many affected people, we would under-stand the root cause of the disease. We don't; but we do know a little.
+
+**Functions of FGF signaling from the apical ectodermal ridge in limb development** [Nature 2002;418(6897):501-8](https://www.nature.com/articles/nature00902)
+
+> A fundamental question in developmental biology is how structures of various sizes and shapes are formed. The vertebrate limb has long been considered and excellent model system for addressing this question. The challenge has been to under-stand how a simple embryonic bud, containing morphologically homogeneous mesenchymal cells and a covering epithelium, develops into an organ that contains numerous elements in diverse forms.
+
+**Long-term relation between breastfeeding and development of atopy and asthma in children and young adults: a longitudinal study** [Lancet 2002;360(9337):901-7](https://linkinghub.elsevier.com/retrieve/pii/S0140-6736(02)11025-7)
+
+> Most reviews of risk factors for asthma recommend extended breastfeeding to reduce the probability of development of atopy and asthma in children. Although such a view is widely accepted and promoted, few investigators have adequately addressed the issue, and their results are conflicting.
+
+**The Coronary Slow Flow Phenomenon - A New Coronary Microvascular Disorder** [Cardiology 2002;97(4):197-202](https://www.karger.com/Article/FullText/63121)
+
+> The coronary slow flow phenomenon is an angiographic observation characterized by aniographically normal or near-normal coronary arteries with delayed opacification of the distal vasculature. Although myocardial biopsy studies have demonstrated the presence of coronary microvascular disease in some patients exhibiting coronary slow flow, the phenomenon have not been investigated. Thus it currently remains uncertain whether most cases of coronary slow flow represent an angiographic manifestation of a pathological process affecting the coronary circulation, or whether it is essentially devoid of clinical implications.
+
+**Risk of Respiratory Complications and Wound Infection in Patients Undergoing Ambulatory Surgery** [Anesthesiology 2002 Oct;97(4):842-7](https://pubs.asahq.org/anesthesiology/article/97/4/842/40507/Risk-of-Respiratory-Complications-and-Wound)
+
+> Smoking is a major health risk, with just under 12% of all deaths in developed countries attributed to tobacco. It is also generally accepted that smoking increases the risk of complications in patients undergoing anesthesia and surgery. Despite this, it is our experience, and that of others, that recommendations to stop smoking before elective surgery are rarely heeded. Most previous studies of perioperative risk associated with smoking were based on self-reporting and did not control for additional risk factors. Also, they may not represent current surgical and anesthetic practice. For example, there has been a marked increase in the proportion of surgery performed on an ambulatory (day-stay) basis, and these important groups have not been previously studied. We therefore studied a broad range of patients undergoing ambulatory surgery and con-firmed their smoking status with end-expired carbon monoxide analysis.
