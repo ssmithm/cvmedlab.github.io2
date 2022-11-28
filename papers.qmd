@@ -6,15 +6,5 @@ editor: visual
 
 ## Lab Papers
 
-Lab papers are listed below, sorted (descending) by year. Where available, the PDF link is also listed, as is the github site or website. 
+Lab papers are listed below, sorted (descending) by year. Where available, the PDF link is also listed, as is the github site or website.
 
-
-```{r pubs, results="asis", echo=FALSE, warning=FALSE, message=FALSE}
-library(bib2df)
-library(stringi)
-
-pub_list("lab_pubs/lab_pubs.bib",
-         "lab_pubs/lab_pubs.yml",
-         "lab_pubs/files",
-         "https://www.cvmedlab.org/files")
-```

@@ -11,15 +11,15 @@ page-layout: full
 
 #### [Area of Focus]{style="color: #7f7f7f"}
 
-My lab is focused on studying adverse cardiovascular effects of common chronic diseases (hypertension, type 2 diabetes, thromboembolic disorders) and optimizing drug therapy to minimize risks of these diseases.
+The CV med Lab is focused on studying adverse cardiovascular effects of common chronic diseases (hypertension, type 2 diabetes, thromboembolic disorders) and optimizing drug therapy to minimize risks of these diseases.
 
-A major focus is on adverse effects of chronic **uncontrolled blood pressure (hypertension)** and ways to optimize antihypertensive drug therapy to mitigate these adverse effects. I have particular expertise in the area of **treatment-resistant hypertension**.
+A major focus is on adverse effects of chronic **uncontrolled blood pressure (hypertension)** and ways to optimize antihypertensive drug therapy to mitigate these adverse effects. Our particular expertise is in the area of **treatment-resistant hypertension**.
 
 #### [Methods]{style="color: #7f7f7f"}
 
-My research spans population and clinical sciences related to cardiovascular disease and its treatment. This includes both observational research, as well as clinical trial work, primarily through my collaboration with colleagues in the [Division of Cardiovascular Medicine](https://cardiology.medicine.ufl.edu/).
+Our research spans population and clinical sciences related to cardiovascular disease and its treatment. This includes both observational research, as well as clinical trial work, primarily through collaborations with colleagues in the [Division of Cardiovascular Medicine](https://cardiology.medicine.ufl.edu/).
 
-I am also interested in research on methods for using electronic health record (EHR) data, including how to minimize misclassification when measuring longitudinal drug exposure from EHR prescribing data, and methods for dealing with missingness in EHR data and biases associated with missing data.
+We are also interested in research on methods for using electronic health record (EHR) data, including how to minimize misclassification when measuring longitudinal drug exposure from EHR prescribing data, and methods for dealing with missingness in EHR data and biases associated with missing data.
 
 #### [Funding]{style="color: #7f7f7f"}
 

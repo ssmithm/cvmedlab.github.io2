@@ -12,7 +12,7 @@
 #' add_link("https://www.cvmedlab.org/", "cvmedlab")
 #'
 add_link <- function(url_path, url_text) {
-  html <- glue::glue("<a href="{url_path}">{url_text}</a>")
+  html <- glue::glue("<a href='{url_path}'>{url_text}</a>")
   cat(html, sep="")
 }
 
@@ -31,7 +31,7 @@ add_link <- function(url_path, url_text) {
 #' add_link_icon("https://www.cvmedlab.org", "cvmedlab", "fas fa-globe")
 #'
 add_link_icon <- function(url_path, url_text, icon_class) {
-  html <- glue::glue('<a href="{url_path}"><i class="{icon_class}">{url_text}</i></a>')
+  html <- glue::glue("<a href='{url_path}'><i class='{icon_class}'>{url_text}</i></a>")
   cat("  ",html, sep="")
 }
 
@@ -52,9 +52,12 @@ add_link_icon <- function(url_path, url_text, icon_class) {
 #' pub_list("lab_pubs.bib",
 #' "lab_pubs.yml",
 #' "lab_pubs/files",
-#' "https://www.crumplab.com/Crump/files")
+#' "https://www.cvmedlab.org/lab_pubs/files")
 #' }
-pub_list <- function(bib, yml, pdf_dir, base_url_to_pdfs) {
+pub_list <- function(bib, 
+                     #yml, 
+                     pdf_dir, 
+                     base_url_to_pdfs) {
   
   # load bib file to df
   pubs <- bib2df::bib2df(bib)
@@ -70,7 +73,7 @@ pub_list <- function(bib, yml, pdf_dir, base_url_to_pdfs) {
   pubs <- pubs[order(pubs$YEAR, decreasing=T),]
   
   # read yml with links for bib entries
-  yml_links <- yaml::read_yaml(yml)
+  #yml_links <- yaml::read_yaml(yml)
   
   # print entries
   for (i in 1:dim(pubs)[1] ){
@@ -79,10 +82,10 @@ pub_list <- function(bib, yml, pdf_dir, base_url_to_pdfs) {
     # to do: make row to bib entry a function
     t_bib_entry <- paste0(capture.output(bib2df::df2bib(pubs[i,])), collapse="")
     # generate markdown text for citation
-    t_md_citation<- paste0(stevemisc::print_refs(t_bib_entry,
-                                                 csl = "jama.csl",
-                                                 spit_out = FALSE,
-                                                 delete_after = FALSE), 
+    t_md_citation<- paste0(print_refs(t_bib_entry,
+                                      csl = "jama.csl",
+                                      spit_out = FALSE,
+                                      delete_after = FALSE), 
                            collapse=" ")
     cat(t_md_citation)
     
@@ -96,20 +99,20 @@ pub_list <- function(bib, yml, pdf_dir, base_url_to_pdfs) {
                                     basename(pubs$FILE[i]),
                                     recursive=T)
       build_url <- paste0(base_url_to_pdfs, "/", rel_path_to_pdf,collapse="")
-      crumplab::add_link_icon(build_url, "pdf", "fas fa-file-pdf")
+      add_link_icon(build_url, "pdf", "fas fa-file-pdf")
       
     }
     
     ## add all other links
-    if( exists(pubs$BIBTEXKEY[i],yml_links) ) { # check yml bib entry exists
-      
-      link_list <- yml_links[[pubs$BIBTEXKEY[i]]]
-      
-      for(l in link_list){
-        add_link_icon(l$url,l$name,l$icon)
-      }
-      
-    }
+    # if( exists(pubs$BIBTEXKEY[i],yml_links) ) { # check yml bib entry exists
+    #   
+    #   link_list <- yml_links[[pubs$BIBTEXKEY[i]]]
+    #   
+    #   for(l in link_list){
+    #     add_link_icon(l$url,l$name,l$icon)
+    #   }
+    #   
+    # }
     cat("</span>")
     cat("\n\n")
   }
@@ -238,7 +241,7 @@ print_refs <- function(bib,
   on.exit(unlink(tmpcit), add=TRUE)
   
   writeLines(c("---","nocite: '@*'","---"), tmpcit)
-  find_pandoc()
+  rmarkdown::find_pandoc()
   command <- paste(shQuote(file.path(find_pandoc()$dir, "pandoc")),
                    "--citeproc",
                    "--to", shQuote(toformat),
